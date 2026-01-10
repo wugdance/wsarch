@@ -6,8 +6,11 @@ also an important part.
 
 ## Setup
 
+`boot.ps` - for windows part.
+`boot.sh` - for linux part.
+
 ```bash
-./init_user.sh
+setup/user.sh
 ```
 
 ```powershell

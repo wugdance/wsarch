@@ -9,15 +9,15 @@ vim.opt.softtabstop = 4
 vim.opt.clipboard = "unnamedplus"
 
 -- Manually specify clipboard provider.
-vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-        ["+"] = "clip.exe",
-        ["*"] = "clip.exe",
-    },
-    paste = {
-        ["+"] = "powershell.exe -NoProfile -Command Get-Clipboard",
-        ["*"] = "powershell.exe -NoProfile -Command Get-Clipboard",
-    },
-    cache_enabled = 0,
-}
+-- vim.g.clipboard = {
+--     name = "WslClipboard",
+--     copy = {
+--         ["+"] = "clip.exe",
+--         ["*"] = "clip.exe",
+--     },
+--     paste = {
+--         ["+"] = "clip.exe",
+--         ["*"] = "clip.exe",
+--     },
+--     cache_enabled = 0,
+-- }
