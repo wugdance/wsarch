@@ -8,6 +8,12 @@ also an important part.
 
 ```bash
 ./init_user.sh
-su - username
+```
+
+```powershell
+boot.ps
+```
+
+```bash
 sudo ./boot.sh
 ```

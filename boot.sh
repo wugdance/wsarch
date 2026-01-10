@@ -17,9 +17,12 @@ export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # "-u" - upgrade all the installed packages.
 pacman -Syu --noconfirm
 
+# Install base package bundle for AUR building.
+pacman -S --noconfirm base-devel 
+
+source setup_wsl.sh
+
 source install/neovim.sh
 source install/git.sh
 source install/tmux.sh
 
-# Install base package bundle for AUR building.
-pacman -S --noconfirm base-devel 
