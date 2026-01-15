@@ -6,6 +6,9 @@ echo "Install neovim..."
 # access the community repository (AUR).
 pacman -S --noconfirm neovim
 
+# Install dependencies.
+pacman -S --noconfirm --needed ripgrep
+
 # ln creates links.
 # -s - create symbolic lynk.
 ln -s "$WSARCH_ROOT/config/neovim" "$HOME/.config/nvim"
