@@ -6,9 +6,34 @@ return {
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         -- { 'nvim-telescope/telescope-ui-select.nvim' },
     },
-    config = function()
-        local telescope_builtin = require("telescope.builtin")
-        vim.keymap.set('n', '<leader>sf', telescope_builtin.find_files)
-        vim.keymap.set('n', '<leader>sg', telescope_builtin.live_grep)
+    keys = {
+        {
+            '<leader>sf', 
+            function()
+                require('telescope.builtin').find_files()
+            end,
+            desc = 'Find files in cwd.',
+        },
+        {
+            '<leader>sg', 
+            function()
+                require('telescope.builtin').live_grep()
+            end,
+            desc = 'Live grep in cwd.',
+        },
+    },
+    opts = {
+        pickers = {
+            find_files = {
+                file_ignore_patterns = { '.git' },
+                hidden = true,
+            },
+        },
+    },
+    config = function(_, opts)
+        local telescope = require("telescope")
+        telescope.setup(opts)
+
+        telescope.load_extension('fzf')
     end,
 }

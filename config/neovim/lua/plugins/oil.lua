@@ -8,10 +8,14 @@ return {
       ['<C-l>'] = false,
       ['<C-r>'] = 'actions.refresh',
     },
+    watch_for_changes = true,
   },
   -- Optional dependencies
-  -- dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-  dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-  -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  keys = {
+      {'<leader>o', '<CMD>Oil<CR>', desc = 'Open Oil'},
+  },
+  -- Lazy loading is not recommended because it is very tricky to make 
+  -- it work correctly in all situations.
   lazy = false,
 }
