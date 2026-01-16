@@ -20,9 +20,11 @@ pacman -Syu --noconfirm
 # Install base package bundle for AUR building.
 pacman -S --noconfirm base-devel 
 
-source setup_wsl.sh
+source setup/wsl.sh
 
-source install/neovim.sh
-source install/git.sh
-source install/tmux.sh
+source setup/neovim.sh
+source setup/git.sh
+source setup/tmux.sh
+
+source setup/bash.sh
 
