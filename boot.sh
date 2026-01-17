@@ -23,8 +23,10 @@ pacman -S --noconfirm base-devel
 source setup/wsl.sh
 
 source setup/neovim.sh
+source setup/bat.sh
 source setup/git.sh
 source setup/tmux.sh
+source setup/starship.sh
 
 source setup/bash.sh
 

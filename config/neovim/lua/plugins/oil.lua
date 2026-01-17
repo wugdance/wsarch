@@ -9,6 +9,9 @@ return {
       ['<C-r>'] = 'actions.refresh',
     },
     watch_for_changes = true,
+    view_options = {
+        show_hidden = true,
+    },
   },
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },

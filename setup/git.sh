@@ -7,5 +7,6 @@ git config --global user.email "sintes4ek@gmail.com"
 git config --global user.name "Alexander Ryabyshkin"
 
 git config --global core.pager "delta"
+git config --global delta.syntax-theme "rose-pine"
 
 echo "git setup has finished."
