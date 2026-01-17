@@ -6,4 +6,6 @@ source install/git.sh
 git config --global user.email "sintes4ek@gmail.com"
 git config --global user.name "Alexander Ryabyshkin"
 
+git config --global core.pager "delta"
+
 echo "git setup has finished."

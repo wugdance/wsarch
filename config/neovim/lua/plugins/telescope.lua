@@ -23,6 +23,13 @@ return {
         },
     },
     opts = {
+        defaults = {
+            layout_config = {
+                horizontal = {
+                    preview_width = 0.6,
+                },
+            },
+        },
         pickers = {
             find_files = {
                 file_ignore_patterns = { '%.git' },
