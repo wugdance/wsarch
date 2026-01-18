@@ -20,6 +20,9 @@ pacman -Syu --noconfirm
 # Install base package bundle for AUR building.
 pacman -S --noconfirm base-devel 
 
+# Somehow should not break the script.
+# source setup/user.sh
+source setup/locale.sh
 source setup/wsl.sh
 
 source init/neovim.sh

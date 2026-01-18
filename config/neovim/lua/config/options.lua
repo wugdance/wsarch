@@ -9,6 +9,16 @@ vim.keymap.set(
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Ignore case by default...
+vim.opt.ignorecase = true
+-- ... but respect case if at least one capital letter exists.
+vim.opt.smartcase  = true
+
+-- Show matches while you are typing the search pattern. So in a long file 
+-- you'll jump to the place where first match is.
+vim.opt.incsearch  = true
+-- Highlights all matches of the last search pattern in the buffer.
+vim.opt.hlsearch   = true
 
 vim.opt.colorcolumn = '79'
 vim.opt.number = true
