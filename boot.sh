@@ -22,11 +22,14 @@ pacman -S --noconfirm base-devel
 
 source setup/wsl.sh
 
-source setup/neovim.sh
-source setup/bat.sh
-source setup/git.sh
-source setup/tmux.sh
-source setup/starship.sh
+source init/neovim.sh
+
+# bat has to be set before git (theme dependence).
+source init/bat.sh
+source init/git.sh
+
+source init/tmux.sh
+source init/starship.sh
 
 source setup/bash.sh
 
