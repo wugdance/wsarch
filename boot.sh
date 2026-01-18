@@ -27,6 +27,7 @@ source setup/wsl.sh
 
 source init/neovim.sh
 
+source init/openssh.sh
 # bat has to be set before git (theme dependence).
 source init/bat.sh
 source init/git.sh
