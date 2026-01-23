@@ -17,9 +17,6 @@ export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # "-u" - upgrade all the installed packages.
 pacman -Syu --noconfirm
 
-# Install base package bundle for AUR building.
-pacman -S --noconfirm base-devel 
-
 # Somehow should not break the script.
 # source setup/user.sh
 source setup/locale.sh
