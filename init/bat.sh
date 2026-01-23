@@ -1,11 +1,11 @@
-echo "Setup bat..."
+echo "Init bat..."
 
 source install/bat.sh
 
 bat --completion bash
 
-ln -s "$WSARCH_ROOT/config/bat" "$HOME/.config/bat"
+ln -s "$WSARCH_ROOT/config/bat" "$WSARCH_USER_HOME/.config/bat"
 
 bat cache --build
 
-echo "bat setup has finished."
+echo "bat init has completed."

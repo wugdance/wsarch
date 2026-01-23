@@ -6,4 +6,4 @@ echo "Install neovim..."
 # access the community repository (AUR).
 pacman -S --noconfirm --needed neovim ripgrep fd
 
-echo "neovim install has finished."
+echo "neovim install has completed."

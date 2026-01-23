@@ -1,3 +1,5 @@
+echo "Init git..."
+
 source install/git.sh
 
 # TODO: Define user email dynamically.
@@ -23,3 +25,5 @@ git config --global delta.line-numbers-plus-style "\"#9ccfd8\" normal"
 git config --global delta.whitespace-error-style "syntax \"#f6c177\""
 
 delta --generate-completion bash
+
+echo "git init has completed."

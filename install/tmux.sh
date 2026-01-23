@@ -2,4 +2,4 @@ echo "Install tmux..."
 
 pacman -S --noconfirm tmux
 
-echo "Complete tmux installation."
+echo "tmux install has completed."

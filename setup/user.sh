@@ -1,4 +1,5 @@
-echo "Init a new user..."
+echo "Setup a new user..."
+
 read -p "Enter your username: " WSARCH_USER
 
 # Add a user:
@@ -26,4 +27,5 @@ pacman -S --noconfirm sudo
 # Validate sudoers syntax.
 visudo -c
 
-echo "User is created."
+echo "${WSARCH_USER} setup has completed."
+unset WSARCH_USER

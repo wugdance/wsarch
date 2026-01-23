@@ -7,4 +7,4 @@ EOF
 locale-gen
 localectl set-locale LANG=en_US.UTF-8
 
-echo "locale settings are set."
+echo "locale setup has completed."

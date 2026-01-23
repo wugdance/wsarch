@@ -1,7 +1,7 @@
-echo "Setuping starshpip..."
+echo "Init starship..."
 
 source install/starship.sh
 
-ln -s "$WSARCH_ROOT/config/starship/starship.toml" "$HOME/.config/starship.toml"
+ln -s "$WSARCH_ROOT/config/starship/starship.toml" "$WSARCH_USER_HOME/.config/starship.toml"
 
-echo "starship setup has finished."
+echo "starship init has completed."
