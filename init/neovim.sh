@@ -1,6 +1,6 @@
 echo "Init neovim..."
 
-source install/neovim.sh
+pacman -S --noconfirm --needed neovim ripgrep fd
 
 # ln creates links.
 # -s - create symbolic lynk.

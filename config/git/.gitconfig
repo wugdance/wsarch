@@ -1,0 +1,21 @@
+[user]
+	email = sintes4ek@gmail.com
+	name = Alexander Ryabyshkin
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[include]
+	path = ~/.config/delta/themes.gitconfig
+[delta]
+	navigate = true
+	features = mellow-barbet
+	syntax-theme = rose-pine
+	line-numbers = true
+	side-by-side = false
+	true-color = always
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+

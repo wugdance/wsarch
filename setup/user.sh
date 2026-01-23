@@ -23,7 +23,7 @@ sh -c 'echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel'
 # Make it readable for owner and group.
 chmod 440 /etc/sudoers.d/wheel
 
-pacman -S --noconfirm sudo
+pacman -S --noconfirm --needed sudo
 # Validate sudoers syntax.
 visudo -c
 

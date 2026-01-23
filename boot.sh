@@ -28,21 +28,26 @@ export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # "-u" - upgrade all the installed packages.
 pacman -Syu --noconfirm
 
+# Install basic build tools.
+pacman -S --needed base-devel
+
 # Somehow should not break the script.
 # source setup/user.sh
 
-# source setup/locale.sh
-# source setup/wsl.sh
+source setup/locale.sh
+source setup/wsl.sh
 
 source init/neovim.sh
 
 source init/openssh.sh
+
 # bat has to be set before git (theme dependence).
 source init/bat.sh
 source init/git.sh
 
 source init/tmux.sh
 source init/starship.sh
+source init/fzf.sh
 
 source setup/bash.sh
 

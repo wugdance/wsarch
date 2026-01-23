@@ -1,10 +1,10 @@
 echo "Init bat..."
 
-source install/bat.sh
+pacman -S --noconfirm bat
 
 bat --completion bash
 
-ln -s "$WSARCH_ROOT/config/bat" "$WSARCH_USER_HOME/.config/bat"
+ln -s "${WSARCH_ROOT}/config/bat" "${WSARCH_USER_HOME}/.config/bat"
 
 bat cache --build
 

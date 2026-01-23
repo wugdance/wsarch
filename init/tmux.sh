@@ -1,9 +1,9 @@
 echo "Init tmux..."
 
-source install/tmux.sh
+pacman -S --noconfirm tmux
 
-ln -s "$WSARCH_ROOT/config/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -s "${WSARCH_ROOT}/config/tmux/.tmux.conf" "${WSARCH_USER_HOME}/.tmux.conf"
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm "${WSARCH_USER_HOME}/.tmux/plugins/tpm"
 
 echo "tmux init has completed."
