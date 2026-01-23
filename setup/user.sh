@@ -1,5 +1,5 @@
-echo "Initialize a user..."
-read -p "Enter your username:" WSARCH_USER
+echo "Init a new user..."
+read -p "Enter your username: " WSARCH_USER
 
 # Add a user:
 # "-m"           - create home folder for the new user.
@@ -15,12 +15,15 @@ passwd $WSARCH_USER
 # Allow the wheel group to execute commands via `sudo`.
 
 # etc/sudoers.d/wheel - directory for sudo configuration fragments
+mkdir -p /etc/sudoers.d
+touch /etc/sudoers.d/wheel
 sh -c 'echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel'
 
 # Make it readable for owner and group.
-chmode 440 /etc/sudoers.d/wheel
+chmod 440 /etc/sudoers.d/wheel
 
+pacman -S --noconfirm sudo
 # Validate sudoers syntax.
 visudo -c
 
-mkdir -p "/home/$WSARCH_USER/.config"
+echo "User is created."
