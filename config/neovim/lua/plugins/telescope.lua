@@ -33,6 +33,13 @@ return {
             end,
             desc = 'Fuzzy search in current buffer.',
         },
+        {
+            '<leader>sr', 
+            function()
+                require('telescope.builtin').resume()
+            end,
+            desc = 'Resume the previous search.',
+        },
     },
     opts = {
         defaults = {
@@ -51,8 +58,8 @@ return {
         },
         pickers = {
             find_files = {
-                file_ignore_patterns = { '%.git' },
                 hidden = true,
+                file_ignore_patterns = { "%.git/" },
             },
         },
     },
