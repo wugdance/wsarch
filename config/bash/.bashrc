@@ -6,8 +6,6 @@ source "${BASHRC_DIR}/history.sh"
 source "${BASHRC_DIR}/vi-mode.sh"
 source "${BASHRC_DIR}/aliases.sh"
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
 export EDITOR="nvim"
 
 source /usr/share/bash-completion/bash_completion

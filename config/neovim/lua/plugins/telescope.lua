@@ -21,6 +21,18 @@ return {
             end,
             desc = 'Live grep in cwd.',
         },
+        {
+            '<leader>/', 
+            function()
+                require('telescope.builtin').current_buffer_fuzzy_find(
+                    require('telescope.themes').get_dropdown {
+                        windblend = 10,
+                        previewer = false,
+                    }
+                )
+            end,
+            desc = 'Fuzzy search in current buffer.',
+        },
     },
     opts = {
         defaults = {
