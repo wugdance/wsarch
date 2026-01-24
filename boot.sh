@@ -5,19 +5,25 @@
 # "-o pipefail" - (o stands for option) fail on pipeline erros.
 set -euo pipefail
 
+# EUID - Effective User ID. The user used to determine the permissions for 
+# action. 0 is root (or via sudo).
 if [[ $EUID -eq 0 ]]; then
     # This script is running as root.
     if [ -z "$SUDO_USER" ]; then
         echo "This script has to be run via sudo, not under root."
         exit 1
     else
-        WSARCH_USER="$SUDO_USER"
-        WSARCH_USER_HOME=$(getent passwd "$WSARCH_USER" | cut -d: -f6)
+        export WSARCH_USER="${SUDO_USER}"
+        export WSARCH_USER_ID=$(id -u "${WSARCH_USER}")
+        export WSARCH_USER_HOME=$(getent passwd "${WSARCH_USER}" | cut -d: -f6)
     fi
+else
+    echo "This script requires root priviliges."
+    exit 1
 fi
 
 # "${BASH_SOURCE[0]}" - contains a path to the run script.
-# "$(dirname ...)"    - get direcotry name.
+# "$(dirname ...)"    - get directory name.
 # $(cd ... && pwd)    - resolve relative paths.
 export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -29,10 +35,7 @@ export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 pacman -Syu --noconfirm
 
 # Install basic build tools.
-pacman -S --needed base-devel
-
-# Somehow should not break the script.
-# source setup/user.sh
+pacman -S --noconfirm --needed base-devel
 
 source setup/locale.sh
 source setup/wsl.sh
