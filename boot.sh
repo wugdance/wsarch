@@ -35,7 +35,7 @@ export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 pacman -Syu --noconfirm
 
 # Install basic build tools.
-pacman -S --noconfirm --needed base-devel
+pacman -S --noconfirm base-devel
 
 source setup/locale.sh
 source setup/wsl.sh
@@ -53,4 +53,3 @@ source init/starship.sh
 source init/fzf.sh
 
 source setup/bash.sh
-
