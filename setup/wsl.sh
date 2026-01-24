@@ -7,4 +7,4 @@ enabled = true
 appendWindowsPath = true
 EOF
 
-echo "wsl settings are set."
+echo "wsl setup has completed."

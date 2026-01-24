@@ -8,28 +8,28 @@ also an important part.
 
 ```ps1
 git clone https://github.com/wugdance/wsarch.git
-.\wsl.ps1
+.windows\wsl.ps1
 wsl -d archlinux
 ```
 
 Executed under root.
 
 ```bash
-cd /tmp
+pacman -Syu
 pacman -S git
-git clone https://github.com/wugdance/wsarch.git
-cd wsarch
+cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch
 ./setup/user.sh
 cd .. && rm -rf wsarch
 exit
 ```
 
 ```ps1
-.\user.ps1
+.\windows\user.ps1
 wsl -d archlinux
-cd ~
-git clone https://github.com/wugdance/wsarch.git
-cd wsarch
+```
+
+```bash
+cd ~ && git clone https://github.com/wugdance/wsarch.git && cd wsarch
 sudo ./boot.sh
 ```
 
