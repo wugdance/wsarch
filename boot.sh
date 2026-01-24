@@ -42,14 +42,12 @@ source setup/wsl.sh
 
 source init/neovim.sh
 
-source init/openssh.sh
-
-# bat has to be set before git (theme dependence).
-source init/bat.sh
-source init/git.sh
+# bat provides the theme for git-delta.
+source init/bat.sh && source init/git.sh
 
 source init/tmux.sh
 source init/starship.sh
 source init/fzf.sh
 
-source setup/bash.sh
+# ssh-agent.service depends on env var from .bashrc.
+source setup/bash.sh && source init/openssh.sh

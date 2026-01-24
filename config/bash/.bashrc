@@ -7,7 +7,7 @@ source "${BASHRC_DIR}/vi-mode.sh"
 source "${BASHRC_DIR}/aliases.sh"
 
 export EDITOR="nvim"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 source /usr/share/bash-completion/bash_completion
 
