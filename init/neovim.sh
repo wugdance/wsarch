@@ -1,6 +1,6 @@
 echo "Init neovim..."
 
-pacman -S --noconfirm --needed neovim ripgrep fd
+pacman -S --noconfirm --needed neovim ripgrep fd tree-sitter-cli unzip
 
 # ln creates links.
 # -s - create symbolic lynk.
