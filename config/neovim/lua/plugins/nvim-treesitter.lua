@@ -1,3 +1,7 @@
+-- Almost exact copy from 
+-- https://github.com/nvim-lua/kickstart.nvim/pull/1657/changes
+--
+-- New languages will be automatically detected and installed.
 return {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,

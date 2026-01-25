@@ -1,8 +1,17 @@
 # wsarch
 
-wsarch goal is providing a convinient way to setup windows 11 wsl archlinux 
-dev env. Learning linux and arch linux in particular throught the way is 
-also an important part.
+The goal is providing a convinient way to setup windows 11 wsl archlinux 
+env. 
+
+
+## Characteristics
+
+* opinionated  - config for personal use primaraly.
+* minimalistic - don't use what you don't need.
+* modular      - separation of concerns, avoid mental overhead.
+* documented   - part of the learning process.
+* ready-to-go  - as few commands to setup as possible.
+
 
 ## Setup order
 
