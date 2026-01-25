@@ -15,5 +15,3 @@ source "${BASHRC_DIR}/fzf.sh"
 
 # Starship init has to be at the end of the config.
 eval "$(starship init bash)"
-
-cd ~
