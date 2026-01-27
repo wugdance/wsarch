@@ -13,5 +13,8 @@ source /usr/share/bash-completion/bash_completion
 
 source "${BASHRC_DIR}/fzf.sh"
 
+. "$HOME/.local/bin/env"
+
 # Starship init has to be at the end of the config.
 eval "$(starship init bash)"
+

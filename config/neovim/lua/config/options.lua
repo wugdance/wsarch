@@ -45,19 +45,20 @@ vim.o.shiftwidth = 4
 vim.o.smartindent = true 
 -- Copy indent from current line when starting new line.
 vim.o.autoindent = true 
--- Always keep 8 lines above/below cursor unless at start/end of file.
-vim.o.scrolloff = 8 
+-- Always keep lines above/below cursor unless at start/end of file.
+vim.o.scrolloff = 4 
 
 -- Yank to system clipboard.
 vim.opt.clipboard = "unnamedplus"
 
-
 vim.opt.laststatus = 2 -- Always show the status line.
 
 -- Set the status line in one go
--- %f -> file name
--- %m -> mode
--- %r -> readonly flag
+-- %f    -> file name
+-- %m    -> mode
+-- %r    -> readonly flag
 -- %l:%L -> line number:total lines
--- %p%% -> percentage of the file
+-- %p%%  -> percentage of the file
 vim.opt.statusline = '%f %m %r%=%l:%L      %p%%'
+
+vim.opt.winborder = 'rounded'
