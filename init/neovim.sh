@@ -12,6 +12,10 @@ curl -LsSf https://astral.sh/ruff/install.sh | sh
 # stylua - lua code formatter.
 sudo -u "${WSARCH_USER}" cargo install stylua
 
+# lua-language-server - yes.
+pacman -S --noconfirm --needed lua-language-server
+
+
 # ln creates links.
 # -s - create symbolic lynk.
 ln -s "${WSARCH_ROOT}/config/neovim" "${WSARCH_USER_HOME}/.config/nvim"
