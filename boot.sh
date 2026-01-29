@@ -52,4 +52,6 @@ source init/starship.sh
 source init/fzf.sh
 
 # ssh-agent.service depends on env var from .bashrc.
-source setup/bash.sh && source init/openssh.sh
+# source setup/bash.sh && source init/openssh.sh
+# But it doesn't work.
+source setup/bash.sh
