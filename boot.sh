@@ -40,6 +40,8 @@ pacman -S --noconfirm base-devel
 source setup/locale.sh
 source setup/wsl.sh
 
+source init/rust.sh
+
 source init/neovim.sh
 
 # bat provides the theme for git-delta.

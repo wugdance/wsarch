@@ -9,6 +9,9 @@ curl -LsSf https://astral.sh/ty/install.sh | sh
 # ruff - python linter and core formatter.
 curl -LsSf https://astral.sh/ruff/install.sh | sh
 
+# stylua - lua code formatter.
+sudo -u "${WSARCH_USER}" cargo install stylua
+
 # ln creates links.
 # -s - create symbolic lynk.
 ln -s "${WSARCH_ROOT}/config/neovim" "${WSARCH_USER_HOME}/.config/nvim"

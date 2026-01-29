@@ -11,7 +11,9 @@ export EDITOR="nvim"
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 source /usr/share/bash-completion/bash_completion
-source "$HOME/.local/bin/env"
+
+source "${HOME}/.local/bin/env"
+source "${HOME}/.cargo/env"
 
 
 # Starship init has to be at the end of the config.
