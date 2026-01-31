@@ -24,8 +24,8 @@ Executed under root.
 
 ```bash
 pacman -Syu --noconfirm git
-cd /tmp && git clone https://github.com/wugdance/wsarch.git && ./wsarch/pre-boot/init.sh
-rm -rf wsarch && exit
+cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch && ./pre-boot/init.sh
+cd .. && rm -rf wsarch && exit
 ```
 
 ```ps1
@@ -33,6 +33,6 @@ wsl --terminate archlinux; wsl -d archlinux
 ```
 
 ```bash
-cd ~ && git clone https://github.com/wugdance/wsarch.git && sudo ./wsarch/boot/init.sh
+cd ~ && git clone https://github.com/wugdance/wsarch.git && cd wsarch && sudo ./boot/init.sh
 ```
 
