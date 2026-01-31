@@ -13,3 +13,4 @@ save neovim for loading too large files
 - [ ] Install ruff for formatting.
 - [ ] Autocmd - apply formatting on save.
 - [ ] Common lsp mappings.
+- [ ] https://github.com/gregorias/coerce.nvim
