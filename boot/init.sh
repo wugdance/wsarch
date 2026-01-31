@@ -45,3 +45,5 @@ source boot/fzf.sh
 # source setup/bash.sh && source boot/openssh.sh
 # But it doesn't work.
 source boot/bash.sh
+
+echo "wsarch boot finished."
