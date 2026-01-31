@@ -25,7 +25,7 @@ fi
 # "${BASH_SOURCE[0]}" - contains a path to the run script.
 # "$(dirname ...)"    - get directory name.
 # $(cd ... && pwd)    - resolve relative paths.
-export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
 
 # Install basic build tools.
 pacman -S --noconfirm base-devel

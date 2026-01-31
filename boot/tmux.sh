@@ -8,6 +8,4 @@ mkdir -p "${WSARCH_ROOT}/config/tmux/plugins"
 git clone https://github.com/tmux-plugins/tpm \
 "${WSARCH_ROOT}/config/tmux/plugins/tpm"
 
-"${WSARCH_ROOT}/config/tmux/plugins/tpm/bin/install_plugins"
-
 echo "tmux init has completed."
