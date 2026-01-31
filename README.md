@@ -25,8 +25,10 @@ Executed under root.
 ```bash
 pacman -Syu --noconfirm
 pacman -S --noconfirm git
+
 cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch
 ./pre-boot/init.sh
+
 cd .. && rm -rf wsarch
 exit
 ```
