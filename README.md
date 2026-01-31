@@ -29,8 +29,7 @@ rm -rf wsarch && exit
 ```
 
 ```ps1
-wsl --terminate archlinux
-wsl -d archlinux
+wsl --terminate archlinux; wsl -d archlinux
 ```
 
 ```bash
