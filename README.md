@@ -26,7 +26,7 @@ Executed under root.
 pacman -Syu --noconfirm
 pacman -S --noconfirm git
 cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch
-./setup/user.sh
+./pre-boot.sh
 cd .. && rm -rf wsarch
 exit
 ```
