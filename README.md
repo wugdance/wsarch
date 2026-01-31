@@ -17,15 +17,14 @@ env.
 
 ```ps1
 git clone https://github.com/wugdance/wsarch.git
-.windows\wsl.ps1
-wsl -d archlinux
+.\windows\wsl.ps1  # You will login into wsl at the end of the script.
 ```
 
 Executed under root.
 
 ```bash
-pacman -Syu
-pacman -S git
+pacman -Syu --noconfirm
+pacman -S --noconfirm git
 cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch
 ./setup/user.sh
 cd .. && rm -rf wsarch
