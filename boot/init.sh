@@ -27,31 +27,21 @@ fi
 # $(cd ... && pwd)    - resolve relative paths.
 export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Update all packages.
-# "-S" - stands for sync. It's in some sense the main flag.
-# Sync flag specifiers placed below:
-# "-y" - refresh the package database.
-# "-u" - upgrade all the installed packages.
-pacman -Syu --noconfirm
-
 # Install basic build tools.
 pacman -S --noconfirm base-devel
 
-source setup/locale.sh
-source setup/wsl.sh
+source boot/rust.sh
 
-source init/rust.sh
-
-source init/neovim.sh
+source boot/neovim.sh
 
 # bat provides the theme for git-delta.
-source init/bat.sh && source init/git.sh
+source boot/bat.sh && source boot/git.sh
 
-source init/tmux.sh
-source init/starship.sh
-source init/fzf.sh
+source boot/tmux.sh
+source boot/starship.sh
+source boot/fzf.sh
 
 # ssh-agent.service depends on env var from .bashrc.
-# source setup/bash.sh && source init/openssh.sh
+# source setup/bash.sh && source boot/openssh.sh
 # But it doesn't work.
-source setup/bash.sh
+source boot/bash.sh

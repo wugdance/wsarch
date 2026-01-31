@@ -26,18 +26,18 @@ Executed under root.
 pacman -Syu --noconfirm
 pacman -S --noconfirm git
 cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch
-./pre-boot.sh
+./pre-boot/init.sh
 cd .. && rm -rf wsarch
 exit
 ```
 
 ```ps1
-.\windows\user.ps1
+wsl --terminate archlinux
 wsl -d archlinux
 ```
 
 ```bash
 cd ~ && git clone https://github.com/wugdance/wsarch.git && cd wsarch
-sudo ./boot.sh
+sudo ./boot/init.sh
 ```
 

@@ -1,7 +1,3 @@
-echo "Setup the root password..."
-passwd
-echo "root password update is done."
-
 echo "Setup a new user..."
 read -p "Enter your username: " WSARCH_USER
 
@@ -27,18 +23,10 @@ chmod 440 /etc/sudoers.d/wheel
 
 echo "${WSARCH_USER} setup has completed."
 
-echo "Setup wsl specific settings."
-
 cat <<EOF >> /etc/wsl.conf
-
-[interop]
-enabled = true
-appendWindowsPath = true
 
 [user]
 default=${WSARCH_USER}
 EOF
-
-echo "wsl setup has completed."
 
 unset WSARCH_USER

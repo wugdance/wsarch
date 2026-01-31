@@ -1,4 +1,4 @@
-echo "Setup wsl specific settings..."
+echo "Setup wsl specific settings."
 
 cat <<EOF >> /etc/wsl.conf
 
