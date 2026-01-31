@@ -23,9 +23,7 @@ git clone https://github.com/wugdance/wsarch.git
 Executed under root.
 
 ```bash
-pacman -Syu --noconfirm git
-cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch && ./pre-boot/init.sh
-cd .. && rm -rf wsarch && exit
+pacman -Syu --noconfirm git && cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch && ./pre-boot/init.sh && cd .. && rm -rf wsarch && exit
 ```
 
 ```ps1
