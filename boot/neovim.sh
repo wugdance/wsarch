@@ -10,7 +10,7 @@ curl -LsSf https://astral.sh/ty/install.sh | sudo -u ${WSARCH_USER} sh
 curl -LsSf https://astral.sh/ruff/install.sh | sudo -u ${WSARCH_USER} sh
 
 # stylua - lua code formatter.
-cargo install stylua
+sudo -u "${WSARCH_USER}" -i cargo install stylua
 
 # lua-language-server - yes.
 pacman -S --noconfirm --needed lua-language-server
