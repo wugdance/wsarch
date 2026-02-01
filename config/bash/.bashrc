@@ -15,7 +15,5 @@ source /usr/share/bash-completion/bash_completion
 source "${HOME}/.local/bin/env"
 source "${HOME}/.cargo/env"
 
-
 # Starship init has to be at the end of the config.
 eval "$(starship init bash)"
-
