@@ -7,7 +7,7 @@ pacman -S --noconfirm --needed neovim ripgrep fd tree-sitter-cli unzip
 curl -LsSf https://astral.sh/ty/install.sh | sudo -u ${WSARCH_USER} sh -s -- --no-modify-path
 
 # ruff - python linter and core formatter.
-curl -LsSf https://astral.sh/ruff/install.sh | sudo -u ${WSARCH_USER} sh
+curl -LsSf https://astral.sh/ruff/install.sh | sudo -u ${WSARCH_USER} sh -s -- --no-modify-path
 
 # stylua - lua code formatter.
 sudo -u "${WSARCH_USER}" -i cargo install stylua
