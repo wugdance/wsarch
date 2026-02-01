@@ -1,3 +1,3 @@
+- [x] neovim clipboard doesn't work.
 - [ ] ssh-agent doesn't start automatically. something with systemd probably.
-- [ ] neovim clipboard doesn't work.
 - [ ] sometimes wezterm changes cursor color.
