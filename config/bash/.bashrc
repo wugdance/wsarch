@@ -3,12 +3,11 @@ BASHRC_REAL_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 BASHRC_DIR="$(dirname "${BASHRC_REAL_PATH}")"
 
 source "${BASHRC_DIR}/history.sh"
-source "${BASHRC_DIR}/vi-mode.sh"
 source "${BASHRC_DIR}/aliases.sh"
 source "${BASHRC_DIR}/fzf.sh"
 
 export EDITOR="nvim"
-# export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 source /usr/share/bash-completion/bash_completion
 

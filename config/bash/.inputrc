@@ -32,3 +32,8 @@ set skip-completed-text on
 
 # Coloring for Bash 4 tab completions.
 set colored-stats on
+
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[2 q\2"      # Block cursor for Normal mode
+set vi-ins-mode-string "\1\e[6 q\2"      # Pipe cursor for Insert mode
