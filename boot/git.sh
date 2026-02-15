@@ -1,6 +1,6 @@
 echo "Init git..."
 
-pacman -S --noconfirm --needed git git-delta
+pacman -S --noconfirm --needed git git-delta less
 
 ln -sf "${WSARCH_ROOT}/config/git/.gitconfig" "${WSARCH_USER_HOME}/.gitconfig"
 ln -sf "${WSARCH_ROOT}/config/delta" "${WSARCH_USER_HOME}/.config/delta"
