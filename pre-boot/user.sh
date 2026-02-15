@@ -13,13 +13,22 @@ useradd -m -G wheel -s /bin/bash $WSARCH_USER
 passwd $WSARCH_USER
 
 pacman -S --noconfirm --needed sudo
+
 # Allow the wheel group to execute commands via `sudo`.
 # etc/sudoers.d/wheel - directory for sudo configuration fragments
-# mkdir -p /etc/sudoers.d
-# touch /etc/sudoers.d/wheel
-echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel
+mkdir -p /etc/sudoers.d && touch /etc/sudoers.d/wheel
+echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/wheel
 # Make it readable for owner and group.
 chmod 440 /etc/sudoers.d/wheel
+visudo -cf /etc/sudoers.d/wheel
+
+# Create a new file in the sudoers.d directory
+echo 'Defaults timestamp_timeout=60' | tee /etc/sudoers.d/timeout_config
+# Set the correct permissions (readable by root only)
+chmod 440 /etc/sudoers.d/timeout_config
+# VALIDATE THE SYNTAX. This command is crucial.
+visudo -cf /etc/sudoers.d/timeout_config
+
 
 echo "${WSARCH_USER} setup has completed."
 
