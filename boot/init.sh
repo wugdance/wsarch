@@ -27,10 +27,10 @@ fi
 # $(cd ... && pwd)    - resolve relative paths.
 export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
 
-# Install basic build tools.
-pacman -S --noconfirm base-devel
+source boot/build-tools.sh
 
-source boot/rust.sh
+source boot/lang/rust.sh
+source boot/lang/python.sh
 
 source boot/neovim.sh
 

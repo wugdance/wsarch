@@ -24,4 +24,3 @@ HISTTIMEFORMAT='%F %T  '
 
 # Don't store duplicates.
 HISTCONTROL=erasedups
-

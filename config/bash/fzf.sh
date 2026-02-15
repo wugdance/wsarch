@@ -9,3 +9,14 @@ export FZF_DEFAULT_OPTS="
 	--color=spinner:#f6c177,info:#9ccfd8
 	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 
+fzf_pacman_i() {
+    pacman -Slq \
+        | fzf --multi --preview 'pacman -Si {1}' \
+        | xargs -ro sudo pacman -S
+}
+
+fzf_pacman_d() {
+    pacman -Qq \
+        | fzf --multi --preview 'pacman -Qi {1}' \
+        | xargs -ro sudo pacman -Rns
+}

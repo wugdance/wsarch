@@ -15,7 +15,7 @@
 	features = mellow-barbet
 	syntax-theme = rose-pine
 	line-numbers = true
-	side-by-side = false
+	side-by-side = true
 	true-color = always
 
 [merge]
@@ -32,6 +32,3 @@
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-
-[url "git@gitlab.com:"]
-	insteadOf = https://gitlab.com/
