@@ -1,5 +1,5 @@
 - [x] del ty
-- [ ] install python-lsp-server
+- [x] install python-lsp-server
 - [ ] better diff theme for git delta
 - [ ] try fzf git
 - [ ] install dap (at least for python)
