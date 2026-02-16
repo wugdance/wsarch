@@ -1,5 +1,5 @@
 return {
-    cmd = { "ty", "server" },
+    cmd = { "pylsp" },
     filetypes = { "python" },
     root_markers = { "pyproject.toml", ".git" },
     settings = {},
