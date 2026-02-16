@@ -1,3 +1,2 @@
-# paru -S --noconfirm --skipreview python310 python310-pip
-pacman -S --noconfirm python python-poetry
-# curl -sSL https://install.python-poetry.org | python3 -
+pacman -S --noconfirm --needed python python-poetry
+paru -S --noconfirm --skipreview python310 
