@@ -17,6 +17,8 @@ return {
                 TelescopeResultsNormal = { fg = "subtle", bg = "none" },
                 TelescopeSelection = { fg = "text", bg = "base" },
                 TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+                Pmenu = { fg = "highlight_high", bg = "none" },
+                StatusLine = { bg = "highlight_low", fg = "text" },
                 FloatBorder = { fg = "highlight_high", bg = "none" },
                 NormalFloat = { bg = "none" },
             },
