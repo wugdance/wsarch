@@ -13,14 +13,25 @@ return {
             highlight_groups = {
                 TelescopeBorder = { fg = "highlight_high", bg = "none" },
                 TelescopeNormal = { bg = "none" },
-                TelescopePromptNormal = { bg = "base" },
+                TelescopePromptNormal = { fg = "text", bg = "none" },
                 TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-                TelescopeSelection = { fg = "text", bg = "base" },
+                TelescopeSelection = { fg = "text", bg = "surface" },
                 TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+
+                BlinkCmpDocBorder = { fg = "highlight_high", bg = "none" },
+                BlinkCmpDoc = { fg = "text", bg = "none" },
+                BlinkCmpDocSeparator = { fg = "highlight_high", bg = "none" },
+
                 Pmenu = { fg = "highlight_high", bg = "none" },
-                StatusLine = { bg = "highlight_low", fg = "text" },
+                PmenuSel = { fg = "text", bg = "surface" },
+
+                PmenuThumb = { fg = "rose", bg = "rose" },
+
                 FloatBorder = { fg = "highlight_high", bg = "none" },
-                NormalFloat = { bg = "none" },
+                NormalFloat = { fg = "highlight_high", bg = "none" },
+
+                StatusLine = { fg = "love", bg = "love", blend = 10 },
+                StatusLineNC = { fg = "subtle", bg = "surface" },
             },
         })
         vim.o.background = "dark"
@@ -29,8 +40,5 @@ return {
 
         -- Enbale true color support
         vim.o.termguicolors = true
-
-        -- You can configure highlights by doing something like:
-        vim.cmd.hi("Comment gui=none")
     end,
 }
