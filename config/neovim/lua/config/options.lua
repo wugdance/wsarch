@@ -57,3 +57,6 @@ vim.opt.laststatus = 2 -- Always show the status line.
 vim.opt.statusline = "%f %m %r%=%l:%L      %p%%"
 
 vim.opt.winborder = "rounded"
+
+-- Keep signcolumn visible even if blank.
+vim.opt.signcolumn = "yes"

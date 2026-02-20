@@ -14,4 +14,4 @@
 - [ ] macros/commands/mappings/something to init pydantic model
 - [ ] codeaction with telescope
 - [ ] save neovim for loading too large files
-- [ ] autocomplete floating windows style
+- [x] autocomplete floating windows style some

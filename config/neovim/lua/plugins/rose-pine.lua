@@ -24,11 +24,10 @@ return {
 
                 Pmenu = { fg = "highlight_high", bg = "none" },
                 PmenuSel = { fg = "text", bg = "surface" },
-
                 PmenuThumb = { fg = "rose", bg = "rose" },
 
                 FloatBorder = { fg = "highlight_high", bg = "none" },
-                NormalFloat = { fg = "highlight_high", bg = "none" },
+                NormalFloat = { fg = "text", bg = "none" },
 
                 StatusLine = { fg = "love", bg = "love", blend = 10 },
                 StatusLineNC = { fg = "subtle", bg = "surface" },

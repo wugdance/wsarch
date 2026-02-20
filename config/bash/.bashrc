@@ -4,6 +4,7 @@ BASHRC_DIR="$(dirname "${BASHRC_REAL_PATH}")"
 
 source "${BASHRC_DIR}/history.sh"
 source "${BASHRC_DIR}/aliases.sh"
+source "${BASHRC_DIR}/funcs.sh"
 source "${BASHRC_DIR}/fzf.sh"
 
 export EDITOR="nvim"
