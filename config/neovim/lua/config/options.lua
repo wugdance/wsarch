@@ -54,7 +54,7 @@ vim.opt.laststatus = 2 -- Always show the status line.
 -- %r    -> readonly flag
 -- %l:%L -> line number:total lines
 -- %p%%  -> percentage of the file
-vim.opt.statusline = "%f %m %r%=%l:%L      %p%%"
+vim.opt.statusline = " %f %m %r%=%l:%L      %p%% "
 
 vim.opt.winborder = "rounded"
 
