@@ -2,16 +2,18 @@
 - [x] install python-lsp-server
 - [ ] better diff theme for git delta
 - [x] try fzf git
-- [ ] install dap (at least for python)
+- [x] install dap (at least for python)
+- [ ] add improved pdb for python
 - [ ] Disable underscore for vim.lsp.diagnostic.
 - [x] Install ruff for formatting.
 - [x] Autocmd - apply formatting on save.
-- [ ] Common lsp mappings.
+- [x] Common lsp mappings.
 - [ ] https://github.com/gregorias/coerce.nvim
 - [ ] treesitter-objects
 - [ ] snacks
 - [ ] ai-agent
 - [ ] macros/commands/mappings/something to init pydantic model
-- [ ] codeaction with telescope
+- [ ] code action with telescope
 - [ ] save neovim for loading too large files
 - [x] autocomplete floating windows style some
+- [ ] highlights for command line completions
