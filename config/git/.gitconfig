@@ -1,5 +1,7 @@
 [alias]
 	acp = "!git add . && git commit && git push"
+    acpo = "!git add . && git commit && \
+        git push -u origin $(git branch --show-current)"
 
 [core]
 	pager = delta
