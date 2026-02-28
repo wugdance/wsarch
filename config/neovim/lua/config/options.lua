@@ -9,6 +9,8 @@ vim.opt.ignorecase = true
 -- ... but respect case if at least one capital letter exists.
 vim.opt.smartcase = true
 
+vim.opt.autowrite = true
+
 -- Show matches while you are typing the search pattern. So in a long file
 -- you'll jump to the place where first match is.
 vim.opt.incsearch = true
@@ -31,7 +33,7 @@ vim.o.wrap = false
 -- How many spaces tab inserts.
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
--- Use appropriate number of spaces with tab.
+-- Use spaces instead of tabs
 vim.o.expandtab = true
 
 -- Controls number of spaces when using >> or << commands.

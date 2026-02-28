@@ -16,7 +16,7 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-        { "<leader>o", "<CMD>Oil<CR>", desc = "Open Oil" },
+        { "<leader>e", "<CMD>Oil<CR>", desc = "Explore with Oil" },
     },
     -- Lazy loading is not recommended because it is very tricky to make
     -- it work correctly in all situations.
