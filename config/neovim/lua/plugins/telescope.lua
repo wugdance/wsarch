@@ -45,6 +45,7 @@ return {
             layout_config = {
                 horizontal = {
                     preview_width = 0.6,
+                    prompt_position = "top",
                 },
                 vertical = {
                     preview_height = 0.55,
