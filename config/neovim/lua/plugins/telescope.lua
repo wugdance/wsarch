@@ -24,10 +24,12 @@ return {
         {
             "<leader>/",
             function()
-                require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-                    windblend = 10,
-                    previewer = false,
-                }))
+                require("telescope.builtin").current_buffer_fuzzy_find(
+                    require("telescope.themes").get_dropdown({
+                        windblend = 10,
+                        previewer = false,
+                    })
+                )
             end,
             desc = "Fuzzy search in current buffer.",
         },
@@ -42,6 +44,7 @@ return {
     opts = {
         defaults = {
             layout_strategy = "flex",
+            sorting_strategy = "ascending",
             layout_config = {
                 horizontal = {
                     preview_width = 0.6,
