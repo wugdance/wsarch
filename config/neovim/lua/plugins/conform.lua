@@ -13,7 +13,7 @@ return {
             desc = "Format buffer",
         },
     },
-    -- This will provide type hinting with LuaLS
+    -- This will provide type hinting with LuaLS.
     ---@module "conform"
     ---@type conform.setupOpts
     opts = {
@@ -30,7 +30,17 @@ return {
         format_on_save = { timeout_ms = 500 },
         formatters = {
             stylua = {
-                append_args = { "--indent-type", "Spaces", "--indent-width", "4" },
+                append_args = {
+                    "--indent-type",
+                    "Spaces",
+                    "--indent-width",
+                    "4",
+                    "--column-width",
+                    "79",
+                },
+            },
+            ruff_format = {
+                append_args = { "--line-length", "79" },
             },
         },
     },
