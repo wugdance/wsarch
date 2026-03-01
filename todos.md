@@ -19,3 +19,4 @@
 - [ ] highlights for command line completions
 - [ ] autocomplete for my functions
 - [ ] fzf git pick changes for commit with preview
+- [ ] relative path in the status line
