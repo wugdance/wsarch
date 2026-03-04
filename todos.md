@@ -6,6 +6,7 @@
 - [x] Autocmd - apply formatting on save.
 - [x] Common lsp mappings.
 - [x] autocomplete floating windows style some
+- [x] highlights for command line completions
 - [ ] better diff theme for git delta
 - [ ] add improved pdb for python
 - [ ] Disable underscore for vim.lsp.diagnostic.
@@ -16,7 +17,6 @@
 - [ ] macros/commands/mappings/something to init pydantic model
 - [ ] code action with telescope
 - [ ] save neovim for loading too large files
-- [ ] highlights for command line completions
-- [ ] autocomplete for my functions
+- [ ] autocomplete for my functions in bash
 - [ ] fzf git pick changes for commit with preview
 - [ ] relative path in the status line

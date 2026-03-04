@@ -5,10 +5,7 @@ pacman -S --noconfirm --needed neovim ripgrep fd unzip xclip
 sudo -u "${WSARCH_USER}" -i cargo install tree-sitter-cli
 
 # Install language specific dependencies:
-# python-lsp-server - for basic lsp features.
-pacman -S --noconfirm --needed python-lsp-server
-# pylsp-rope - for formatting features.
-paru -S --noconfirm --skipreview python-pylsp-rope 
+paru -S --noconfirm --skipreview pyrefly
 
 # ruff - python linter and formatter.
 curl -LsSf https://astral.sh/ruff/install.sh \
