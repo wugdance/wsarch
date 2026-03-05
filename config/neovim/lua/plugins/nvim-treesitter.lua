@@ -36,7 +36,8 @@ return {
                     return
                 end
 
-                local installed_parsers = require("nvim-treesitter").get_installed("parsers")
+                local installed_parsers =
+                    require("nvim-treesitter").get_installed("parsers")
 
                 if vim.tbl_contains(installed_parsers, language) then
                     -- Enable the parser if it is installed.
@@ -44,9 +45,11 @@ return {
                 elseif vim.tbl_contains(available_parsers, language) then
                     -- If a parser is available in `nvim-treesitter`
                     -- enable it after ensuring it is installed.
-                    require("nvim-treesitter").install(language):await(function()
-                        treesitter_try_attach(buf, language)
-                    end)
+                    require("nvim-treesitter")
+                        .install(language)
+                        :await(function()
+                            treesitter_try_attach(buf, language)
+                        end)
                 else
                     -- Try to enable treesitter features in case the parser
                     -- exists but is not available from `nvim-treesitter`.
@@ -68,6 +71,7 @@ return {
             "query",
             "vim",
             "vimdoc",
+            "python",
         }
         require("nvim-treesitter").install(parsers)
     end,
