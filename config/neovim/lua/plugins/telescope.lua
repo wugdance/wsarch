@@ -43,6 +43,9 @@ return {
     },
     opts = {
         defaults = {
+            path_display = {
+                truncate = 3,
+            },
             layout_strategy = "flex",
             sorting_strategy = "ascending",
             layout_config = {
