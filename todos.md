@@ -16,7 +16,9 @@
 - [ ] ai-agent
 - [ ] macros/commands/mappings/something to init pydantic model
 - [ ] code action with telescope
-- [ ] save neovim for loading too large files
+- [ ] save neovim from loading too large files
 - [ ] autocomplete for my functions in bash
 - [ ] fzf git pick changes for commit with preview
 - [ ] relative path in the status line
+- [ ] lsp for bash
+- [ ] config for raw typing experience, md maybe
