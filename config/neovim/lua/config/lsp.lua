@@ -1,6 +1,7 @@
-vim.lsp.enable("ruff")
-vim.lsp.enable("pyrefly")
-vim.lsp.enable("luals")
+local servers = { "ruff", "pyrefly", "luals" }
+for _, server in ipairs(servers) do
+    vim.lsp.enable(server)
+end
 
 vim.keymap.set(
     "n",
