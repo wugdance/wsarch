@@ -24,3 +24,5 @@
 - [ ] config for raw typing experience, md maybe
 - [ ] lazydev for neovim
 - [ ] what ruff server actually do?
+- [x] pyrefly settings
+- [ ] keymaps for diagnostic

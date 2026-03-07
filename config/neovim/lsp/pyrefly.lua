@@ -11,6 +11,9 @@ return {
             pyrefly = {
                 displayTypeErrors = "force-on",
             },
+            analysis = {
+                showHoverGoToLinks = false,
+            },
         },
     },
 }
