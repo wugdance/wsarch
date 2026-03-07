@@ -22,3 +22,5 @@
 - [ ] relative path in the status line
 - [ ] lsp for bash
 - [ ] config for raw typing experience, md maybe
+- [ ] lazydev for neovim
+- [ ] what ruff server actually do?
