@@ -4,7 +4,7 @@ return {
         "nvim-lua/plenary.nvim",
         -- optional but recommended
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-        -- { 'nvim-telescope/telescope-ui-select.nvim' },
+        { "nvim-telescope/telescope-ui-select.nvim" },
     },
     keys = {
         {
@@ -67,11 +67,23 @@ return {
                 file_ignore_patterns = { "%.git/" },
             },
         },
+        extensions = {
+            ["ui-select"] = {
+                layout_strategy = "cursor",
+                layout_config = { width = 0.4, height = 0.3 },
+                on_complete = {
+                    function()
+                        vim.cmd("stopinsert")
+                    end,
+                },
+            },
+        },
     },
     config = function(_, opts)
         local telescope = require("telescope")
         telescope.setup(opts)
 
         telescope.load_extension("fzf")
+        telescope.load_extension("ui-select")
     end,
 }

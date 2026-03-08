@@ -16,7 +16,7 @@ vim.keymap.set(
     { desc = "Perfom rename." }
 )
 vim.keymap.set(
-    "n",
+    { "n", "v" },
     "<leader>ca",
     vim.lsp.buf.code_action,
     { desc = "Pefrom code action." }
@@ -25,5 +25,11 @@ vim.keymap.set(
     "n",
     "<leader>gr",
     vim.lsp.buf.references,
+    { desc = "Show references." }
+)
+vim.keymap.set(
+    "n",
+    "<leader>d",
+    vim.diagnostic.open_float,
     { desc = "Show references." }
 )

@@ -13,6 +13,14 @@ return {
             },
             analysis = {
                 showHoverGoToLinks = false,
+                -- diagnosticMode = "workspace",
+                -- If enable, you have to configure hl-groups.
+                -- inlayHints = {
+                --     callArgumentNames = "all",
+                --     variableTypes = true,
+                --     functionReturnTypes = true,
+                --     pytestParameters = true,
+                -- },
             },
         },
     },

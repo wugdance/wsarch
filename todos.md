@@ -25,4 +25,5 @@
 - [ ] lazydev for neovim
 - [ ] what ruff server actually do?
 - [x] pyrefly settings
-- [ ] keymaps for diagnostic
+- [x] keymaps for diagnostic
+- [ ] treesitter and semantic token highlights conflict
