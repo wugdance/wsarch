@@ -22,6 +22,7 @@ return {
                 -- },
             },
             disabledLanguageServices = {
+                -- Has a race with treesitter.
                 semanticTokens = false,
             },
         },
