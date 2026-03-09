@@ -15,7 +15,7 @@
 - [ ] snacks
 - [ ] ai-agent
 - [ ] macros/commands/mappings/something to init pydantic model
-- [ ] code action with telescope
+- [x] code action with telescope
 - [ ] save neovim from loading too large files
 - [ ] autocomplete for my functions in bash
 - [ ] fzf git pick changes for commit with preview
@@ -23,7 +23,7 @@
 - [ ] lsp for bash
 - [ ] config for raw typing experience, md maybe
 - [ ] lazydev for neovim
-- [ ] what ruff server actually do?
+- [x] what ruff server actually do? -> linting
 - [x] pyrefly settings
 - [x] keymaps for diagnostic
-- [ ] treesitter and semantic token highlights conflict
+- [x] treesitter and semantic token highlights conflict
