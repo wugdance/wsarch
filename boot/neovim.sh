@@ -5,11 +5,9 @@ pacman -S --noconfirm --needed neovim ripgrep fd unzip xclip
 sudo -u "${WSARCH_USER}" -i cargo install tree-sitter-cli
 
 # Install language specific dependencies:
-paru -S --noconfirm --skipreview pyrefly
-
 # ruff - python linter and formatter.
-curl -LsSf https://astral.sh/ruff/install.sh \
-    | sudo -u ${WSARCH_USER} env RUFF_NO_MODIFY_PATH=1 sh
+# ty - lsp for python.
+pacman -S --noconfirm --needed ty ruff
 
 # stylua - lua code formatter.
 sudo -u "${WSARCH_USER}" -i cargo install stylua
