@@ -32,3 +32,11 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
         vim.cmd("tabnext " .. current_tab)
     end,
 })
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+    pattern = "i:*", -- When leaving insert mode to any other mode
+    callback = function()
+        -- This catches all exits from insert mode
+        os.execute("kbs.exe en")
+    end,
+})
