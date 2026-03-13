@@ -3,7 +3,6 @@
 The goal is providing a convinient way to setup windows 11 wsl archlinux 
 env. 
 
-
 ## Characteristics
 
 * opinionated  - config for personal use primaraly.
@@ -11,7 +10,6 @@ env.
 * modular      - separation of concerns, avoid mental overhead.
 * documented   - part of the learning process.
 * ready-to-go  - as few commands to setup as possible.
-
 
 ## Setup order
 
