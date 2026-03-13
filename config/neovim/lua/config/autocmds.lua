@@ -1,21 +1,12 @@
-local function augroup(name)
-    return vim.api.nvim_create_augroup(
-        "custom_autocmd_" .. name,
-        { clear = true }
-    )
-end
-
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text.",
-    group = augroup("highlight-yank"),
     callback = function()
         vim.hl.on_yank()
     end,
 })
 
--- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-    group = augroup("checktime"),
+    desc = "Check if we need to reload the file when it changed.",
     callback = function()
         if vim.o.buftype ~= "nofile" then
             vim.cmd("checktime")
@@ -23,9 +14,8 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
     end,
 })
 
--- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-    group = augroup("resize_splits"),
+    desc = "Resize splits if window got resized.",
     callback = function()
         local current_tab = vim.fn.tabpagenr()
         vim.cmd("tabdo wincmd =")
@@ -34,9 +24,9 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 
 vim.api.nvim_create_autocmd("ModeChanged", {
-    pattern = "i:*", -- When leaving insert mode to any other mode
+    desc = "Switch to en layout after leaving insert mode.",
+    pattern = "i:*", -- When leaving insert mode to any other mode.
     callback = function()
-        -- This catches all exits from insert mode
         vim.fn.jobstart({ "kbs.exe", "en" })
     end,
 })
