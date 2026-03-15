@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 vim.api.nvim_create_autocmd("ModeChanged", {
     desc = "Switch to en layout after leaving insert mode.",
-    pattern = "i:*", -- When leaving insert mode to any other mode.
+    pattern = "i:n",
     callback = function()
         vim.fn.jobstart({ "kbs.exe", "en" })
     end,
