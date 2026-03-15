@@ -12,7 +12,7 @@ return {
     },
     settings = {
         ty = {
-            -- ty lang settings here
+            diagnosticMode = "workspace",
         },
     },
 }
