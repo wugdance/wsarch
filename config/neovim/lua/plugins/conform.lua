@@ -21,6 +21,7 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
+            markdown = { "mdformat" },
         },
         -- Set default options
         default_format_opts = {
@@ -41,6 +42,9 @@ return {
             },
             ruff_format = {
                 append_args = { "--line-length", "79" },
+            },
+            mdformat = {
+                append_args = { "--wrap", "79" },
             },
         },
     },

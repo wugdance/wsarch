@@ -12,6 +12,9 @@ pacman -S --noconfirm --needed ty ruff
 # stylua - lua code formatter.
 sudo -u "${WSARCH_USER}" -i cargo install stylua
 
+# mdformat - formatter for markdown.
+sudo pacman -S mdformat
+
 # lua-language-server - yes.
 pacman -S --noconfirm --needed lua-language-server
 
