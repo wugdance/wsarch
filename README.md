@@ -1,15 +1,14 @@
 # wsarch
 
-The goal is providing a convinient way to setup windows 11 wsl archlinux 
-env. 
+The goal is providing a convinient way to setup windows 11 wsl archlinux env.
 
 ## Characteristics
 
-* opinionated  - config for personal use primaraly.
-* minimalistic - don't use what you don't need.
-* modular      - separation of concerns, avoid mental overhead.
-* documented   - part of the learning process.
-* ready-to-go  - as few commands to setup as possible.
+- opinionated - config for personal use primaraly.
+- minimalistic - don't use what you don't need.
+- modular - separation of concerns, avoid mental overhead.
+- documented - part of the learning process.
+- ready-to-go - as few commands to setup as possible.
 
 ## Setup order
 
@@ -19,23 +18,23 @@ Clone the repo and execute wsl installation script.
 git clone https://github.com/wugdance/wsarch.git
 .\windows\wsl.ps1  
 ```
-You will login into wsl at the end of the script.
-Executed the command below. It will be executed under root. Command will 
-ask for prompt several times.
+
+You will login into wsl at the end of the script. Executed the command below.
+It will be executed under root. Command will ask for prompt several times.
 
 ```bash
 pacman -Syu --noconfirm git && cd /tmp && git clone https://github.com/wugdance/wsarch.git && cd wsarch && ./pre-boot/init.sh && cd .. && rm -rf wsarch && exit
 ```
 
-At the end you will be placed in windows powershell again. Reload the wsl 
+At the end you will be placed in windows powershell again. Reload the wsl
 distro and log in again with:
 
 ```ps1
 wsl --terminate archlinux; wsl -d archlinux
 ```
 
-And finally execute main init script. It will prompt for sudo password 
-(most likely twice).
+And finally execute main init script. It will prompt for sudo password (most
+likely twice).
 
 ```bash
 cd ~ && git clone https://github.com/wugdance/wsarch.git && cd wsarch && sudo ./boot/init.sh

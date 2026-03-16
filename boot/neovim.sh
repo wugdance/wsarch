@@ -10,7 +10,7 @@ sudo -u "${WSARCH_USER}" -i cargo install tree-sitter-cli
 pacman -S --noconfirm --needed ty ruff
 
 # stylua - lua code formatter.
-sudo -u "${WSARCH_USER}" -i cargo install stylua
+paru -S stylua
 
 # mdformat - formatter for markdown.
 sudo pacman -S mdformat
