@@ -1,13 +1,11 @@
 # wsarch
 
-The goal is providing a convinient way to setup windows 11 wsl archlinux env.
-
-## Characteristics
+Providing a way to setup and manage windows 11 wsl arch env. It's:
 
 - opinionated - config for personal use primaraly.
-- minimalistic - don't use what you don't need.
+- minimal - don't use what you don't need.
 - modular - separation of concerns, avoid mental overhead.
-- documented - part of the learning process.
+- documented - it's part of the learning process.
 - ready-to-go - as few commands to setup as possible.
 
 ## Setup order
@@ -34,7 +32,7 @@ wsl --terminate archlinux; wsl -d archlinux
 ```
 
 And finally execute main init script. It will prompt for sudo password (most
-likely twice).
+likely several times).
 
 ```bash
 cd ~ && git clone https://github.com/wugdance/wsarch.git && cd wsarch && sudo ./boot/init.sh
