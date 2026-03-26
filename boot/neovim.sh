@@ -10,17 +10,14 @@ sudo -u "${WSARCH_USER}" -i cargo install tree-sitter-cli
 pacman -S --noconfirm --needed ty ruff
 
 # stylua - lua code formatter.
-paru -S stylua
+sudo -u "${WSARCH_USER}" -i paru -S --noconfirm --skipreview stylua
 
 # mdformat - formatter for markdown.
-sudo pacman -S mdformat
+pacman -S --noconfirm --needed mdformat
 
 # lua-language-server - yes.
 pacman -S --noconfirm --needed lua-language-server
 
-
-# ln creates links.
-# -s - create symbolic lynk.
-ln -s "${WSARCH_ROOT}/config/neovim" "${WSARCH_USER_HOME}/.config/nvim"
+ln -sf "${WSARCH_ROOT}/config/neovim" "${WSARCH_USER_HOME}/.config/nvim"
 
 echo "neovim init has completed."

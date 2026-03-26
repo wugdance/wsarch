@@ -1,2 +1,2 @@
 pacman -S --noconfirm --needed python python-poetry
-paru -S --noconfirm --skipreview python310 
+sudo -u "${WSARCH_USER}" -i paru -S --noconfirm --skipreview python310 
