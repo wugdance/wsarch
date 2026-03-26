@@ -40,6 +40,13 @@ return {
             end,
             desc = "Resume the previous search.",
         },
+        {
+            "<leader>sb",
+            function()
+                require("telescope.builtin").buffers()
+            end,
+            desc = "Show opened buffers.",
+        },
     },
     opts = {
         defaults = {
