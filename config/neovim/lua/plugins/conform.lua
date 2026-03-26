@@ -20,7 +20,7 @@ return {
         -- Define your formatters
         formatters_by_ft = {
             lua = { "stylua" },
-            python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
+            python = { "ruff_organize_imports", "ruff_format" },
             markdown = { "mdformat" },
         },
         -- Set default options
