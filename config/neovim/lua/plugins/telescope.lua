@@ -50,6 +50,11 @@ return {
     },
     opts = {
         defaults = {
+            mappings = {
+                n = {
+                    ["dd"] = require("telescope.actions").delete_buffer,
+                },
+            },
             path_display = {
                 truncate = 3,
             },

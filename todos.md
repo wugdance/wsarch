@@ -27,3 +27,4 @@
 - [x] pyrefly settings
 - [x] keymaps for diagnostic
 - [x] treesitter and semantic token highlights conflict
+- [ ] Error first diagnostic
