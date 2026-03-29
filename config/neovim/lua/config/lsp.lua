@@ -3,18 +3,21 @@ for _, server in ipairs(servers) do
     vim.lsp.enable(server)
 end
 
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    underline = false,
+    update_in_insert = false,
+    severity_sort = true,
+})
+
 vim.keymap.set(
     "n",
     "gd",
     vim.lsp.buf.definition,
     { desc = "Go to definition." }
 )
-vim.keymap.set(
-    "n",
-    "<leader>rn",
-    vim.lsp.buf.rename,
-    { desc = "Perfom rename." }
-)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename." })
 vim.keymap.set(
     { "n", "v" },
     "<leader>ca",
@@ -29,7 +32,13 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>d",
+    "<leader>df",
     vim.diagnostic.open_float,
-    { desc = "Show references." }
+    { desc = "Open float diagnostic." }
+)
+vim.keymap.set(
+    "n",
+    "<leader>dq",
+    vim.diagnostic.setqflist,
+    { desc = "Open quickfix list filled with diagnostic." }
 )

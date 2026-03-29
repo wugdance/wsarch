@@ -9,7 +9,7 @@
 - [x] highlights for command line completions
 - [ ] better diff theme for git delta
 - [ ] add improved pdb for python
-- [ ] Disable underscore for vim.lsp.diagnostic.
+- [x] Disable underscore for vim.lsp.diagnostic.
 - [ ] https://github.com/gregorias/coerce.nvim
 - [ ] treesitter-objects
 - [ ] snacks
@@ -27,4 +27,4 @@
 - [x] pyrefly settings
 - [x] keymaps for diagnostic
 - [x] treesitter and semantic token highlights conflict
-- [ ] Error first diagnostic
+- [x] Error first diagnostic
