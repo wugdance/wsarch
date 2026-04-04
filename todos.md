@@ -7,15 +7,20 @@
 - [x] Common lsp mappings.
 - [x] autocomplete floating windows style some
 - [x] highlights for command line completions
+- [x] Disable underscore for vim.lsp.diagnostic.
+- [x] code action with telescope
+- [x] what ruff server actually do? -> linting
+- [x] pyrefly settings
+- [x] keymaps for diagnostic
+- [x] treesitter and semantic token highlights conflict
+- [x] Error first diagnostic
 - [ ] better diff theme for git delta
 - [ ] add improved pdb for python
-- [x] Disable underscore for vim.lsp.diagnostic.
-- [ ] https://github.com/gregorias/coerce.nvim
+- [ ] gregorias/coerce.nvim or textcase?
 - [ ] treesitter-objects
 - [ ] snacks
 - [ ] ai-agent
 - [ ] macros/commands/mappings/something to init pydantic model
-- [x] code action with telescope
 - [ ] save neovim from loading too large files
 - [ ] autocomplete for my functions in bash
 - [ ] fzf git pick changes for commit with preview
@@ -23,8 +28,5 @@
 - [ ] lsp for bash
 - [ ] config for raw typing experience, md maybe
 - [ ] lazydev for neovim
-- [x] what ruff server actually do? -> linting
-- [x] pyrefly settings
-- [x] keymaps for diagnostic
-- [x] treesitter and semantic token highlights conflict
-- [x] Error first diagnostic
+- [ ] lag for diagnostic
+- [ ] migrating to vim.pack?
