@@ -22,6 +22,14 @@ return {
             desc = "Live grep in cwd.",
         },
         {
+            "<leader>ss",
+            function()
+                require("telescope.builtin").grep_string()
+            end,
+            desc = "Grep for the string under the cursor or visual selection.",
+            mode = { "n", "v" },
+        },
+        {
             "<leader>/",
             function()
                 require("telescope.builtin").current_buffer_fuzzy_find(
