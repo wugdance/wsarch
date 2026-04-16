@@ -12,7 +12,7 @@ return {
     },
     settings = {
         ty = {
-            diagnosticMode = "workspace",
+            diagnosticMode = "openFilesOnly",
         },
     },
 }

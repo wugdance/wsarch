@@ -8,6 +8,7 @@ source "${BASHRC_DIR}/funcs.sh"
 source "${BASHRC_DIR}/fzf.sh"
 
 export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 source /usr/share/bash-completion/bash_completion

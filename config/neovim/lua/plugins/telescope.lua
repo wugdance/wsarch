@@ -55,6 +55,13 @@ return {
             end,
             desc = "Show opened buffers.",
         },
+        {
+            "<leader>bs",
+            function()
+                require("telescope.builtin").lsp_document_symbols()
+            end,
+            desc = "Show symbols in the current buffer.",
+        },
     },
     opts = {
         defaults = {

@@ -27,6 +27,8 @@ fi
 # $(cd ... && pwd)    - resolve relative paths.
 export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
 
+pacman -S --noconfirm man-db 
+
 source boot/build-tools.sh
 
 source boot/lang/rust.sh

@@ -26,19 +26,16 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>gr",
+    "<leader>rf",
     vim.lsp.buf.references,
     { desc = "Show references." }
 )
 vim.keymap.set(
     "n",
-    "<leader>df",
+    "<leader>d",
     vim.diagnostic.open_float,
     { desc = "Open float diagnostic." }
 )
-vim.keymap.set(
-    "n",
-    "<leader>dq",
-    vim.diagnostic.setqflist,
-    { desc = "Open quickfix list filled with diagnostic." }
-)
+vim.keymap.set("n", "<leader>bd", function()
+    vim.diagnostic.setqflist({ severity = nil, open = true, bufnr = 0 })
+end, { desc = "Open float diagnostic for current buffer." })
