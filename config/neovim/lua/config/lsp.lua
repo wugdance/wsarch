@@ -36,6 +36,9 @@ vim.keymap.set(
     vim.diagnostic.open_float,
     { desc = "Open float diagnostic." }
 )
-vim.keymap.set("n", "<leader>bd", function()
-    vim.diagnostic.setqflist({ severity = nil, open = true, bufnr = 0 })
-end, { desc = "Open float diagnostic for current buffer." })
+vim.keymap.set(
+    "n",
+    "<leader>bd",
+    vim.diagnostic.setloclist,
+    { desc = "Add buffer diagnostic to the location list." }
+)
