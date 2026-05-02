@@ -1,19 +1,3 @@
-- [x] del ty
-- [x] install python-lsp-server
-- [x] try fzf git
-- [x] install dap (at least for python)
-- [x] Install ruff for formatting.
-- [x] Autocmd - apply formatting on save.
-- [x] Common lsp mappings.
-- [x] autocomplete floating windows style some
-- [x] highlights for command line completions
-- [x] Disable underscore for vim.lsp.diagnostic.
-- [x] code action with telescope
-- [x] what ruff server actually do? -> linting
-- [x] pyrefly settings
-- [x] keymaps for diagnostic
-- [x] treesitter and semantic token highlights conflict
-- [x] Error first diagnostic
 - [ ] better diff theme for git delta
 - [ ] add improved pdb for python
 - [ ] gregorias/coerce.nvim or textcase?
@@ -29,4 +13,5 @@
 - [ ] config for raw typing experience, md maybe
 - [ ] lazydev for neovim
 - [ ] lag for diagnostic
-- [ ] migrating to vim.pack?
+- [ ] migrating to vim.pack
+- [ ] own colorscheme

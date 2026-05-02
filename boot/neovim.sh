@@ -13,7 +13,8 @@ pacman -S --noconfirm --needed ty ruff
 sudo -u "${WSARCH_USER}" -i paru -S --noconfirm --skipreview stylua
 
 # mdformat - formatter for markdown.
-pacman -S --noconfirm --needed mdformat mdformat-tables
+# marksman - markdown lsp.
+pacman -S --noconfirm --needed mdformat mdformat-tables marksman
 
 # lua-language-server - yes.
 pacman -S --noconfirm --needed lua-language-server
