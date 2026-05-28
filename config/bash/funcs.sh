@@ -14,15 +14,8 @@ function pacman::remove {
         | xargs -ro sudo pacman -Rns
 }
 
-function pytest::run {
-    target=$1
-
-    poetry run pytest -s -vv $target
-}
-
 function jit {
     base_url="https://jit.o3.ru/browse/"
     task=$(echo $(git branch --show-current) | cut -d '/' -f 2)
     explorer.exe "${base_url}${task}"
-
 }

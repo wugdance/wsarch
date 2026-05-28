@@ -29,23 +29,25 @@ export WSARCH_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)"
 
 pacman -S --noconfirm man-db 
 
-source boot/build-tools.sh
+source boot/modules/build-tools.sh
 
-source boot/lang/rust.sh
-source boot/lang/python.sh
+source boot/modules/lang/rust.sh
+source boot/modules/lang/python.sh
 
-source boot/neovim.sh
+source boot/modules/neovim.sh
 
 # bat provides the theme for git-delta.
-source boot/bat.sh && source boot/git.sh
+source boot/modules/bat.sh && source boot/git.sh
 
-source boot/tmux.sh
-source boot/starship.sh
-source boot/fzf.sh
+source boot/modules/tmux.sh
+source boot/modules/starship.sh
+source boot/modules/fzf.sh
+
+source boot/modules/opencode.sh
 
 # ssh-agent.service depends on env var from .bashrc.
-# source setup/bash.sh && source boot/openssh.sh
+# source setup/bash.sh && source boot/modules/openssh.sh
 # But it doesn't work.
-source boot/bash.sh
+source boot/modules/bash.sh
 
 echo "wsarch boot finished."
