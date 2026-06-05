@@ -16,5 +16,14 @@ source /usr/share/bash-completion/bash_completion
 source "${HOME}/.local/bin/env"
 source "${HOME}/.cargo/env"
 
+# Prevent Bash from executing the prompt when a raw newline (\n) is received
+bind '"\n": self-insert'
+
+# Enable Bracketed Paste so pasted multi-line blocks do not execute line-by-line
+bind 'set enable-bracketed-paste on'
+
+export PATH=$PATH:~/.o3-cli/bin
+export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
+
 # Starship init has to be at the end of the config.
 eval "$(starship init bash)"
