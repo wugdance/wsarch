@@ -23,7 +23,7 @@ chmod 440 /etc/sudoers.d/wheel
 visudo -cf /etc/sudoers.d/wheel
 
 # Create a new file in the sudoers.d directory
-echo 'Defaults timestamp_timeout=60' | tee /etc/sudoers.d/timeout_config
+echo 'Defaults timestamp_timeout=1440' | tee /etc/sudoers.d/timeout_config
 # Set the correct permissions (readable by root only)
 chmod 440 /etc/sudoers.d/timeout_config
 # VALIDATE THE SYNTAX. This command is crucial.

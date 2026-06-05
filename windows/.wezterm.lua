@@ -8,11 +8,10 @@ config.keys = {
         mods = "CTRL",
         action = wezterm.action.PasteFrom("Clipboard"),
     },
-    -- Intercept Shift+Enter and send a raw line feed character (\n)
     {
         key = "Enter",
         mods = "SHIFT",
-        action = wezterm.action.SendString("\n"),
+        action = wezterm.action.SendString("\x1b[200~\n\x1b[201~"),
     },
 }
 config.window_background_opacity = 1

@@ -16,9 +16,6 @@ source /usr/share/bash-completion/bash_completion
 source "${HOME}/.local/bin/env"
 source "${HOME}/.cargo/env"
 
-# Prevent Bash from executing the prompt when a raw newline (\n) is received
-bind '"\n": self-insert'
-
 # Enable Bracketed Paste so pasted multi-line blocks do not execute line-by-line
 bind 'set enable-bracketed-paste on'
 
