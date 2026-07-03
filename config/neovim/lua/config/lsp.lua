@@ -17,18 +17,11 @@ vim.keymap.set(
     vim.lsp.buf.definition,
     { desc = "Go to definition." }
 )
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename." })
 vim.keymap.set(
     { "n", "v" },
     "<leader>ca",
     vim.lsp.buf.code_action,
     { desc = "Pefrom code action." }
-)
-vim.keymap.set(
-    "n",
-    "<leader>rf",
-    vim.lsp.buf.references,
-    { desc = "Show references." }
 )
 vim.keymap.set(
     "n",

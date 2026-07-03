@@ -11,13 +11,12 @@ pacman -S --noconfirm --needed ty ruff
 
 # stylua - lua code formatter.
 sudo -u "${WSARCH_USER}" -i paru -S --noconfirm --skipreview stylua
+# lua-language-server - yes.
+pacman -S --noconfirm --needed lua-language-server
 
 # mdformat - formatter for markdown.
 # marksman - markdown lsp.
 pacman -S --noconfirm --needed mdformat mdformat-tables marksman
-
-# lua-language-server - yes.
-pacman -S --noconfirm --needed lua-language-server
 
 ln -sf "${WSARCH_ROOT}/config/neovim" "${WSARCH_USER_HOME}/.config/nvim"
 

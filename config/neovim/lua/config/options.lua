@@ -1,8 +1,17 @@
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
-vim.keymap.set({ "n", "v", "o" }, "<Space>", "<Nop>", { silent = true, remap = false })
+vim.keymap.set(
+    { "n", "v", "o" },
+    "<Space>",
+    "<Nop>",
+    { silent = true, remap = false }
+)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- Prevents Neovim from loading the problematic runtime SQL completion code
+-- altogether.
+vim.g.omni_sql_no_default_maps = 1
 
 -- Ignore case by default...
 vim.opt.ignorecase = true

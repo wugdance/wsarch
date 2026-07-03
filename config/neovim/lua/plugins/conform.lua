@@ -44,7 +44,7 @@ return {
                 append_args = { "--line-length", "79" },
             },
             mdformat = {
-                append_args = { "--wrap", "79" },
+                append_args = { "--wrap", "79", "--number" },
             },
         },
     },
