@@ -27,8 +27,20 @@ return {
         default_format_opts = {
             lsp_format = "fallback",
         },
-        -- Set up format-on-save
-        format_on_save = { timeout_ms = 500 },
+        -- format_on_save = { timeout_ms = 500 },
+        format_on_save = function(bufnr)
+            local bufname = vim.api.nvim_buf_get_name(bufnr)
+            local filetype = vim.bo[bufnr].filetype
+
+            if
+                filetype == "markdown" and string.match(bufname, "/opencode/")
+            then
+                -- Return nothing to skip format on save
+                return
+            end
+
+            return { timeout_ms = 500, lsp_format = "fallback" }
+        end,
         formatters = {
             stylua = {
                 append_args = {
