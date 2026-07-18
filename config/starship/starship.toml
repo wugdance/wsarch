@@ -1,3 +1,5 @@
+scan_timeout = 60
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 [aws]
