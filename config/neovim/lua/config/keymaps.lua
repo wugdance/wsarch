@@ -10,3 +10,11 @@ vim.keymap.set("n", "<leader>bn", function()
 end, {
     desc = "Get current buffer name.",
 })
+
+vim.keymap.set("n", "<leader>sq", function()
+    require("sqlcmd").execute_sql("buffer")
+end, { desc = "Execute SQL query from buffer." })
+
+vim.keymap.set("v", "<leader>sq",
+    [[:<C-u>lua require("sqlcmd").execute_sql_from_marks()<CR>]],
+    { desc = "Execute SQL query from selection." })

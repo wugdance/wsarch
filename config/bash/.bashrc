@@ -20,6 +20,7 @@ source "${HOME}/.cargo/env"
 bind 'set enable-bracketed-paste on'
 
 export PATH=$PATH:~/.o3-cli/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
 export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
 
 # Starship init has to be at the end of the config.

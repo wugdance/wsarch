@@ -1,7 +1,7 @@
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 vim.keymap.set(
-    { "n", "v", "o" },
+    { "n", "o" },
     "<Space>",
     "<Nop>",
     { silent = true, remap = false }
