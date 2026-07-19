@@ -71,3 +71,6 @@ vim.opt.winborder = "rounded"
 
 -- Keep signcolumn visible even if blank.
 vim.opt.signcolumn = "yes"
+
+-- Disable netrw file explorer (oil.nvim handles directories instead).
+vim.g.loaded_netrwPlugin = 1
