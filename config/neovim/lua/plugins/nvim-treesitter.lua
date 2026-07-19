@@ -4,7 +4,7 @@
 -- New languages will be automatically detected and installed.
 return {
     "nvim-treesitter/nvim-treesitter",
-    lazy = false,
+    event = "VeryLazy",
     build = ":TSUpdate",
     branch = "main",
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter-intro`

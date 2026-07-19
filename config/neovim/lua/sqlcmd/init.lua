@@ -5,9 +5,13 @@ local M = {}
 local running = false
 
 M.server = vim.g.sqlcmd_server
-    or error("vim.g.sqlcmd_server is not set -- configure it in config/neovim/lua/config/local.lua")
+    or error(
+        "vim.g.sqlcmd_server is not set -- configure it in config/neovim/lua/config/local.lua"
+    )
 M.database = vim.g.sqlcmd_database
-    or error("vim.g.sqlcmd_database is not set -- configure it in config/neovim/lua/config/local.lua")
+    or error(
+        "vim.g.sqlcmd_database is not set -- configure it in config/neovim/lua/config/local.lua"
+    )
 M.trust_cert = true
 M.max_rows = 5000
 M.mdformat_threshold = 1000
@@ -18,7 +22,8 @@ local function get_sql_text(source, range_start, range_end)
     if source == "buffer" then
         lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
     elseif source == "visual" then
-        lines = vim.api.nvim_buf_get_lines(0, range_start - 1, range_end, false)
+        lines =
+            vim.api.nvim_buf_get_lines(0, range_start - 1, range_end, false)
     end
 
     if #lines == 0 or (#lines == 1 and lines[1] == "") then
@@ -35,12 +40,16 @@ end
 local function build_sqlcmd_args(sql, tmpfile)
     local args = {
         "sqlcmd",
-        "-S", M.server,
+        "-S",
+        M.server,
         "-E",
-        "-d", M.database,
-        "-s", "|",
+        "-d",
+        M.database,
+        "-s",
+        "|",
         "-W",
-        "-i", tmpfile,
+        "-i",
+        tmpfile,
     }
     if M.trust_cert then
         table.insert(args, "-C")
@@ -100,11 +109,8 @@ local function create_exit_handler(opts)
             { "sqlcmd: writing results... ", "None" },
         }, false, {})
 
-        local row_count, total_found = format.write_stream(
-            raw,
-            out_path,
-            M.max_rows
-        )
+        local row_count, total_found =
+            format.write_stream(raw, out_path, M.max_rows)
 
         if row_count == nil then
             vim.notify(
@@ -125,10 +131,7 @@ local function create_exit_handler(opts)
                     vim.log.levels.ERROR
                 )
             else
-                vim.notify(
-                    "No data returned from query.",
-                    vim.log.levels.WARN
-                )
+                vim.notify("No data returned from query.", vim.log.levels.WARN)
             end
             return
         end
@@ -259,7 +262,10 @@ function M.execute_sql(source)
         run_query(sql)
     end)
     if not ok then
-        vim.notify("SQL execution error: " .. tostring(err), vim.log.levels.ERROR)
+        vim.notify(
+            "SQL execution error: " .. tostring(err),
+            vim.log.levels.ERROR
+        )
     end
 end
 
@@ -273,7 +279,10 @@ function M.execute_sql_visual(start_line, end_line)
         run_query(sql)
     end)
     if not ok then
-        vim.notify("SQL execution error: " .. tostring(err), vim.log.levels.ERROR)
+        vim.notify(
+            "SQL execution error: " .. tostring(err),
+            vim.log.levels.ERROR
+        )
     end
 end
 

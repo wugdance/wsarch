@@ -1,1 +1,2 @@
-sudo -u "${WSARCH_USER}" -i paru -S --noconfirm --skipreview go-sqlcmd
+# todo:
+# install c++ version of sqlcmd
