@@ -1,96 +1,96 @@
-scan_timeout = 60
+scan_timeout = 30
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
 [aws]
-symbol = " "
+disabled = true
 
 [buf]
-symbol = " "
+disabled = true
 
 [bun]
-symbol = " "
+disabled = true
 
 [c]
-symbol = " "
+disabled = true
 
 [cpp]
-symbol = " "
+disabled = true
 
 [cmake]
-symbol = " "
+disabled = true
 
 [conda]
-symbol = " "
+disabled = true
 
 [crystal]
-symbol = " "
+disabled = true
 
 [dart]
-symbol = " "
+disabled = true
 
 [deno]
-symbol = " "
+disabled = true
 
 [directory]
 read_only = " 󰌾"
 
 [docker_context]
-symbol = " "
+disabled = true
 
 [elixir]
-symbol = " "
+disabled = true
 
 [elm]
-symbol = " "
+disabled = true
 
 [fennel]
-symbol = " "
+disabled = true
 
 [fortran]
-symbol = " "
+disabled = true
 
 [fossil_branch]
-symbol = " "
+disabled = true
 
 [gcloud]
-symbol = " "
+disabled = true
 
 [git_branch]
 symbol = " "
 
 [git_commit]
-tag_symbol = '  '
+disabled = true
 
 [golang]
 symbol = " "
 
 [gradle]
-symbol = " "
+disabled = true
 
 [guix_shell]
-symbol = " "
+disabled = true
 
 [haskell]
-symbol = " "
+disabled = true
 
 [haxe]
-symbol = " "
+disabled = true
 
 [hg_branch]
-symbol = " "
+disabled = true
 
 [hostname]
 ssh_symbol = " "
 
 [java]
-symbol = " "
+disabled = true
 
 [julia]
-symbol = " "
+disabled = true
 
 [kotlin]
-symbol = " "
+disabled = true
 
 [lua]
 symbol = " "
@@ -99,19 +99,19 @@ symbol = " "
 symbol = "󰍛 "
 
 [meson]
-symbol = "󰔷 "
+disabled = true
 
 [nim]
-symbol = "󰆥 "
+disabled = true
 
 [nix_shell]
-symbol = " "
+disabled = true
 
 [nodejs]
 symbol = " "
 
 [ocaml]
-symbol = " "
+disabled = true
 
 [os.symbols]
 Alpaquita = " "
@@ -165,43 +165,43 @@ Windows = "󰍲 "
 Zorin = " "
 
 [package]
-symbol = "󰏗 "
+disabled = true
 
 [perl]
-symbol = " "
+disabled = true
 
 [php]
-symbol = " "
+disabled = true
 
 [pijul_channel]
-symbol = " "
+disabled = true
 
 [pixi]
-symbol = "󰏗 "
+disabled = true
 
 [python]
 symbol = " "
 
 [rlang]
-symbol = "󰟔 "
+disabled = true
 
 [ruby]
-symbol = " "
+disabled = true
 
 [rust]
 symbol = "󱘗 "
 
 [scala]
-symbol = " "
+disabled = true
 
 [status]
 symbol = " "
 
 [swift]
-symbol = " "
+disabled = true
 
 [xmake]
-symbol = " "
+disabled = true
 
 [zig]
-symbol = " "
+disabled = true

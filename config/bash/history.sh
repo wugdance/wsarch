@@ -14,10 +14,10 @@ shopt -s histverify
 
 # Number of commands kept in memory (current session). Makes fzf much more 
 # powerful for really old commands or if there are many of thems.
-HISTSIZE=50000
+HISTSIZE=10000
 
 # Maximum number of commands stored on disk (~/.bash_history).
-HISTFILESIZE=100000
+HISTFILESIZE=20000
 
 # Enable showing date and time when command was run.
 HISTTIMEFORMAT='%F %T  '
