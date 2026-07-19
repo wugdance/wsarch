@@ -23,26 +23,28 @@ function M.write_stream(raw, out_path, max_rows)
                 or t:gsub("[%s|]", ""):match("^%-+$")
             then
             elseif not header_written then
-                local cells = vim.split(t, "|", { plain = true })
-                for j, cell in ipairs(cells) do
-                    cells[j] = trim(cell)
-                end
+                local cells = vim
+                    .iter(vim.split(t, "|", { plain = true }))
+                    :map(trim)
+                    :totable()
                 file:write("| " .. table.concat(cells, " | ") .. " |\n")
 
-                local seps = {}
-                for _ = 1, #cells do
-                    table.insert(seps, "---")
-                end
+                local seps = vim
+                    .iter(cells)
+                    :map(function()
+                        return "---"
+                    end)
+                    :totable()
                 file:write("| " .. table.concat(seps, " | ") .. " |\n")
 
                 header_written = true
             else
                 total_found = total_found + 1
                 if row_count < max_rows or max_rows == 0 then
-                    local cells = vim.split(t, "|", { plain = true })
-                    for j, cell in ipairs(cells) do
-                        cells[j] = trim(cell)
-                    end
+                    local cells = vim
+                        .iter(vim.split(t, "|", { plain = true }))
+                        :map(trim)
+                        :totable()
                     file:write("| " .. table.concat(cells, " | ") .. " |\n")
                     row_count = row_count + 1
                 end

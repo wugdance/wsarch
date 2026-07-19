@@ -103,7 +103,7 @@ local function create_exit_handler(opts)
         local raw = table.concat(stdout_data, "\n")
         local out_path = vim.fn.stdpath("cache")
             .. "/sqlcmd_output/query-output.md"
-        vim.fn.mkdir(vim.fn.fnamemodify(out_path, ":h"), "p")
+        vim.fn.mkdir(vim.fs.dirname(out_path), "p")
 
         vim.api.nvim_echo({
             { "sqlcmd: writing results... ", "None" },

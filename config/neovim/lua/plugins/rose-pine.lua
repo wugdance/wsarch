@@ -21,6 +21,7 @@ return {
                 BlinkCmpDocBorder = { fg = "highlight_high", bg = "none" },
                 BlinkCmpDoc = { fg = "text", bg = "none" },
                 BlinkCmpDocSeparator = { fg = "highlight_high", bg = "none" },
+                BlinkCmpMenuBorder = { fg = "highlight_high", bg = "none" },
 
                 Pmenu = { fg = "highlight_high", bg = "none" },
                 PmenuSel = { fg = "text", bg = "surface" },
