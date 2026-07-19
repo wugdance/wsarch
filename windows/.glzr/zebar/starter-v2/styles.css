@@ -1,0 +1,228 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+:root {
+  --rose-base: #191724;
+  --rose-surface: #1f1d2e;
+  --rose-overlay: #26233a;
+  --rose-text: #e0def4;
+  --rose-muted: #6e6a86;
+  --rose-subtle: #908caa;
+  --rose-love: #eb6f92;
+  --rose-gold: #f6c177;
+  --rose-rose: #ebbcba;
+  --rose-pine: #31748f;
+  --rose-foam: #9ccfd8;
+  --rose-iris: #c4a7e7;
+  --rose-highlight-low: #21202e;
+  --rose-highlight-med: #403d52;
+  --rose-highlight-high: #524f67;
+
+  --glass-bg: rgba(25, 23, 36, 0.75);
+  --glass-border: rgba(38, 35, 58, 0.6);
+  --pill-bg: rgba(31, 29, 46, 0.7);
+  --pill-hover: rgba(38, 35, 58, 0.8);
+}
+
+body {
+  color: var(--rose-text);
+  font-family: 'Symbols Nerd Font', 'JetBrainsMono Nerd Font', 'CaskaydiaCove Nerd Font', ui-monospace, monospace;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 4px 1.5vw;
+  gap: 8px;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.center {
+  justify-self: center;
+  color: var(--rose-text);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.right {
+  justify-self: end;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.workspace {
+  background: var(--pill-bg);
+  border: 1px solid transparent;
+  margin-right: 0;
+  padding: 4px 12px;
+  color: var(--rose-text);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+
+  &.displayed {
+    background: var(--pill-hover);
+    border-color: var(--glass-border);
+  }
+
+  &.focused {
+    background: rgba(49, 116, 143, 0.85);
+    border-color: var(--rose-pine);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background: rgba(49, 116, 143, 0.4);
+  }
+}
+
+.binding-mode {
+  background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--rose-text);
+  border-radius: 8px;
+  line-height: 1;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 150ms ease;
+
+  &:hover {
+    background: var(--pill-hover);
+  }
+}
+
+.binding-mode {
+  margin-right: 0;
+  font-size: 18px;
+}
+
+.paused-button {
+  background: rgba(235, 111, 146, 0.2);
+  border: 1px solid var(--rose-love);
+  color: var(--rose-love);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 150ms ease;
+
+  &:hover {
+    background: rgba(235, 111, 146, 0.35);
+  }
+}
+
+.keyboard,
+.network,
+.memory,
+.cpu,
+.battery {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--pill-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 2px 10px;
+  margin-right: 0;
+  font-size: 18px;
+}
+
+.keyboard {
+  color: var(--rose-text);
+  display: flex;
+  justify-content: center;
+}
+
+.keyboard span {
+  margin: 0 auto;
+}
+
+.network i {
+  color: var(--rose-foam);
+}
+
+.memory i {
+  color: var(--rose-iris);
+}
+
+.cpu i {
+  color: var(--rose-love);
+}
+
+.cpu .high-usage {
+  color: var(--rose-love);
+  font-weight: 700;
+}
+
+.battery i {
+  color: var(--rose-gold);
+}
+
+.battery {
+  position: relative;
+}
+
+.battery .charging-icon {
+  position: absolute;
+  color: var(--rose-foam);
+  font-size: 7px;
+  left: -6px;
+  top: 3px;
+}
+
+i {
+  color: var(--rose-text);
+  margin-right: 0;
+}
+
+.progress-bar {
+  width: 36px;
+  height: 4px;
+  background: rgba(38, 35, 58, 0.6);
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 300ms ease;
+}
+
+.memory-bar .progress-fill {
+  background: var(--rose-iris);
+}
+
+.cpu-bar .progress-fill {
+  background: var(--rose-love);
+}
