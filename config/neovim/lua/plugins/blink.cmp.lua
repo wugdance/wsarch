@@ -1,8 +1,6 @@
 return {
     "saghen/blink.cmp",
     event = "InsertEnter",
-    -- optional: provides snippets for the snippet source
-    dependencies = { "rafamadriz/friendly-snippets" },
 
     -- use a release tag to download pre-built binaries
     version = "1.*",
@@ -21,8 +19,6 @@ return {
         -- See :h blink-cmp-config-keymap for defining your own keymap
         keymap = { preset = "default" },
 
-        snippets = { preset = "vim_snippet" },
-
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- Adjusts spacing to ensure icons are aligned
@@ -39,8 +35,8 @@ return {
         },
 
         sources = {
-            default = { "lsp", "buffer", "snippets", "path" },
-            per_source = {
+            default = { "lsp", "buffer", "path" },
+            providers = {
                 lsp = { max_items = 20 },
                 buffer = { max_items = 10 },
             },
