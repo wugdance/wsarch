@@ -15,12 +15,14 @@ source /usr/share/bash-completion/bash_completion
 
 source "${HOME}/.local/bin/env"
 source "${HOME}/.cargo/env"
+source /usr/share/nvm/init-nvm.sh
 
 # Enable Bracketed Paste so pasted multi-line blocks do not execute line-by-line
 bind 'set enable-bracketed-paste on'
 
 export PATH=$PATH:~/.o3-cli/bin
 export PATH="$PATH:$(go env GOPATH)/bin"
+
 export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
 
 # Starship init has to be at the end of the config.
