@@ -1,4 +1,4 @@
-- [ ] better diff theme for git delta
+- [-] better diff theme for git delta
 - [ ] add improved pdb for python
 - [ ] treesitter-objects
 - [ ] snacks

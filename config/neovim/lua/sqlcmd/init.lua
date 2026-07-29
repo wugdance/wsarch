@@ -3,6 +3,8 @@ local ui = require("sqlcmd.ui")
 
 local M = {}
 local running = false
+local job_id = nil
+local cancelled = false
 
 M.server = vim.g.sqlcmd_server
     or error(
@@ -15,6 +17,7 @@ M.database = vim.g.sqlcmd_database
 M.trust_cert = true
 M.max_rows = 5000
 M.mdformat_threshold = 1000
+M.error_path = vim.fn.stdpath("cache") .. "/sqlcmd_output/query-error.md"
 
 local function get_sql_text(source, range_start, range_end)
     local lines
@@ -45,6 +48,7 @@ local function build_sqlcmd_args(sql, tmpfile)
         "-E",
         "-d",
         M.database,
+        "-I",
         "-s",
         "|",
         "-W",
@@ -73,30 +77,111 @@ local function create_exit_handler(opts)
     local start = opts.start
     local stdout_data = opts.stdout_data
     local stderr_data = opts.stderr_data
+    local sql = opts.sql
+    local sqlcmd_args = opts.sqlcmd_args
+
+    local function clean_up()
+        pcall(os.remove, tmpfile)
+    end
+
+    local function write_error(data)
+        vim.fn.mkdir(vim.fs.dirname(M.error_path), "p")
+        local f = io.open(M.error_path, "w")
+        if f then
+            f:write(data)
+            f:close()
+        end
+        ui.open_result(M.error_path)
+    end
+
+    local function fallback_capture()
+        local rerun_tmp = vim.fn.tempname() .. ".sql"
+        vim.fn.writefile(vim.split(sql, "\n", { plain = true }), rerun_tmp)
+
+        local rerun_args = {}
+        for _, a in ipairs(sqlcmd_args) do
+            if a == tmpfile then
+                table.insert(rerun_args, rerun_tmp)
+            else
+                table.insert(rerun_args, a)
+            end
+        end
+
+        local escaped = vim
+            .iter(rerun_args)
+            :map(function(a)
+                return vim.fn.shellescape(a)
+            end)
+            :totable()
+        local cmd = table.concat(escaped, " ") .. " 2>&1"
+        local output = vim.fn.system(cmd)
+
+        pcall(os.remove, rerun_tmp)
+        return output
+    end
 
     return function(_, exit_code, _)
         running = false
+        job_id = nil
+        local was_cancelled = cancelled
+        cancelled = false
         local elapsed = (vim.uv.now() - start) / 1000
 
         timer:stop()
         timer:close()
         vim.api.nvim_echo({}, false, {})
-        pcall(os.remove, tmpfile)
+
+        if was_cancelled then
+            if #stdout_data > 0 then
+                local raw = table.concat(stdout_data, "\n")
+                local cancelled_path = vim.fn.stdpath("cache")
+                    .. "/sqlcmd_output/query-cancelled.md"
+                vim.fn.mkdir(vim.fs.dirname(cancelled_path), "p")
+
+                local row_count =
+                    format.write_stream(raw, cancelled_path, M.max_rows)
+
+                if row_count and row_count > 0 then
+                    local content = vim.fn.readfile(cancelled_path)
+                    table.insert(content, 1, "")
+                    table.insert(
+                        content,
+                        1,
+                        "> **Query cancelled** — results may be incomplete"
+                    )
+                    vim.fn.writefile(content, cancelled_path)
+
+                    ui.open_result(cancelled_path)
+                    vim.notify(
+                        "SQL query cancelled — partial results shown",
+                        vim.log.levels.WARN
+                    )
+                else
+                    vim.notify("SQL query cancelled.", vim.log.levels.WARN)
+                end
+            else
+                vim.notify("SQL query cancelled.", vim.log.levels.WARN)
+            end
+            clean_up()
+            return
+        end
 
         if exit_code ~= 0 then
+            local raw = table.concat(stdout_data, "\n")
+            local err = table.concat(stderr_data, "\n")
+            if raw == "" and err == "" then
+                raw = fallback_capture()
+            elseif raw == "" and err ~= "" then
+                raw = err
+            end
+            write_error(raw)
             local msg = string.format(
-                "SQL query failed (%.1fs): exited with code %d",
+                "SQL query failed (%.1fs): exited with code %d — see output buffer",
                 elapsed,
                 exit_code
             )
-            if stderr_data and #stderr_data > 0 then
-                local err_text = table
-                    .concat(stderr_data, "\n")
-                    :gsub("%s+$", "")
-                    :gsub("\n", " ")
-                msg = msg .. " " .. err_text
-            end
             vim.notify(msg, vim.log.levels.ERROR)
+            clean_up()
             return
         end
 
@@ -117,22 +202,43 @@ local function create_exit_handler(opts)
                 "Failed to write results: " .. tostring(total_found),
                 vim.log.levels.ERROR
             )
+            clean_up()
             return
         end
 
         if row_count == 0 then
-            if stderr_data and #stderr_data > 0 then
-                local err_text = table
-                    .concat(stderr_data, "\n")
-                    :gsub("%s+$", "")
-                    :gsub("\n", " ")
+            if exit_code == 0 then
+                local raw = table.concat(stdout_data, "\n")
+                local filtered = raw:gsub("^%s*(.-)%s*$", "%1")
+                if filtered ~= "" then
+                    vim.fn.mkdir(vim.fs.dirname(out_path), "p")
+                    local f = io.open(out_path, "w")
+                    if f then
+                        f:write(raw)
+                        f:close()
+                    end
+                    ui.open_result(out_path)
+                    vim.notify(
+                        "Query executed — no table data",
+                        vim.log.levels.INFO
+                    )
+                else
+                    vim.notify(
+                        "Query executed (no output)",
+                        vim.log.levels.INFO
+                    )
+                end
+            else
+                local captured = fallback_capture()
+                write_error(
+                    captured ~= "" and captured or "Query failed with no output"
+                )
                 vim.notify(
-                    "sqlcmd reported: " .. err_text,
+                    "Query failed — see output buffer",
                     vim.log.levels.ERROR
                 )
-            else
-                vim.notify("No data returned from query.", vim.log.levels.WARN)
             end
+            clean_up()
             return
         end
 
@@ -177,6 +283,7 @@ local function create_exit_handler(opts)
         vim.notify(msg, vim.log.levels.INFO)
 
         ui.open_result(out_path)
+        clean_up()
     end
 end
 
@@ -224,9 +331,11 @@ local function run_query(sql)
         start = start,
         stdout_data = stdout_data,
         stderr_data = stderr_data,
+        sql = sql,
+        sqlcmd_args = args,
     })
 
-    local job_id = vim.fn.jobstart(args, {
+    job_id = vim.fn.jobstart(args, {
         stdout_buffered = true,
         stderr_buffered = true,
         on_stdout = function(_, data)
@@ -294,6 +403,16 @@ function M.execute_sql_from_marks()
         return
     end
     M.execute_sql_visual(start_line, end_line)
+end
+
+function M.stop_query()
+    if not running or not job_id then
+        vim.notify("No running SQL query to stop.", vim.log.levels.INFO)
+        return
+    end
+    cancelled = true
+    vim.fn.jobstop(job_id)
+    vim.notify("SQL query stopping...", vim.log.levels.INFO)
 end
 
 return M

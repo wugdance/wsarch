@@ -17,7 +17,7 @@
 	features = mellow-barbet
 	syntax-theme = rose-pine
 	line-numbers = true
-	side-by-side = false
+	side-by-side = true
 	true-color = always
 
 [merge]

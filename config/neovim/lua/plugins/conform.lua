@@ -33,7 +33,11 @@ return {
             local filetype = vim.bo[bufnr].filetype
 
             if
-                filetype == "markdown" and string.match(bufname, "/opencode/")
+                filetype == "markdown"
+                and (
+                    string.match(bufname, "/opencode/")
+                    or string.match(bufname, "/openspec/")
+                )
             then
                 -- Return nothing to skip format on save
                 return
