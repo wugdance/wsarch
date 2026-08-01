@@ -21,7 +21,8 @@ return {
 
             -- Enables treesitter based folds.
             -- For more info on folds see `:help folds`.
-            -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            -- vim.wo.foldmethod = "expr"
+            -- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
             -- Enables treesitter based indentation.
             vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
