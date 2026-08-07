@@ -22,11 +22,11 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
         vim.cmd("tabnext " .. current_tab)
     end,
 })
-
-vim.api.nvim_create_autocmd("ModeChanged", {
-    desc = "Switch to en layout after leaving insert mode.",
-    pattern = "i:n",
-    callback = function()
-        vim.fn.jobstart({ "kbs.exe", "en" })
-    end,
-})
+--
+-- vim.api.nvim_create_autocmd("ModeChanged", {
+--     desc = "Switch to en layout after leaving insert mode.",
+--     pattern = "i:n",
+--     callback = function()
+--         vim.fn.jobstart({ "kbs.exe", "en" })
+--     end,
+-- })
