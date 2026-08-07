@@ -19,14 +19,25 @@ M.max_rows = 5000
 M.mdformat_threshold = 1000
 M.error_path = vim.fn.stdpath("cache") .. "/sqlcmd_output/query-error.md"
 
-local function get_sql_text(source, range_start, range_end)
+local function get_sql_text(source, range_start, range_end, start_col, end_col)
     local lines
 
     if source == "buffer" then
         lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
     elseif source == "visual" then
-        lines =
-            vim.api.nvim_buf_get_lines(0, range_start - 1, range_end, false)
+        if start_col and end_col then
+            lines = vim.api.nvim_buf_get_text(
+                0,
+                range_start - 1,
+                start_col,
+                range_end - 1,
+                end_col,
+                {}
+            )
+        else
+            lines =
+                vim.api.nvim_buf_get_lines(0, range_start - 1, range_end, false)
+        end
     end
 
     if #lines == 0 or (#lines == 1 and lines[1] == "") then
@@ -378,9 +389,9 @@ function M.execute_sql(source)
     end
 end
 
-function M.execute_sql_visual(start_line, end_line)
+function M.execute_sql_visual(start_line, end_line, start_col, end_col)
     local ok, err = pcall(function()
-        local sql = get_sql_text("visual", start_line, end_line)
+        local sql = get_sql_text("visual", start_line, end_line, start_col, end_col)
         if not sql then
             vim.notify("No SQL text to execute.", vim.log.levels.WARN)
             return
@@ -396,13 +407,20 @@ function M.execute_sql_visual(start_line, end_line)
 end
 
 function M.execute_sql_from_marks()
+    local mode = vim.fn.visualmode()
     local start_line = vim.fn.line("'<")
     local end_line = vim.fn.line("'>")
     if start_line == 0 or end_line == 0 then
         vim.notify("No visual selection detected.", vim.log.levels.WARN)
         return
     end
-    M.execute_sql_visual(start_line, end_line)
+    if mode == "v" then
+        local _, srow, scol = unpack(vim.fn.getpos("'<"))
+        local _, erow, ecol = unpack(vim.fn.getpos("'>"))
+        M.execute_sql_visual(start_line, end_line, scol - 1, ecol)
+    else
+        M.execute_sql_visual(start_line, end_line)
+    end
 end
 
 function M.stop_query()
