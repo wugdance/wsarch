@@ -1,4 +1,3 @@
-- [-] better diff theme for git delta
 - [ ] add improved pdb for python
 - [ ] treesitter-objects
 - [ ] snacks
@@ -16,3 +15,6 @@
   - make import string from python buffer
   - make pytest command from python buffer
 - [ ] fold using
+- tmux popup ideas:
+  - [ ] create a unique note
+  - [ ] neovim <esc> and \<ctrl+c> interference

@@ -31,3 +31,13 @@ function vhtml {
     powershell.exe -Command "Start-Process '$(wslpath -w "$1")'"
 }
 
+# nvm lazy-loader: node/npm/npx/yarn/pnpm/nvm source nvm only on first use
+__load_nvm() {
+    unset -f node npm npx yarn pnpm nvm
+    source /usr/share/nvm/init-nvm.sh
+}
+for __nvm_cmd in node npm npx yarn pnpm nvm; do
+    eval "$__nvm_cmd() { __load_nvm; command $__nvm_cmd \"\$@\"; }"
+done
+unset __nvm_cmd
+

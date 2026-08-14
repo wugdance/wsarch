@@ -1,5 +1,17 @@
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+# Set up fzf key bindings and fuzzy completion (lazy: loads on first Ctrl-T/Ctrl-R/Alt-C)
+__fzf_lazy() {
+    eval "$(fzf --bash)"
+    printf '\rLoaded fzf.\n'
+}
+__fzf_bind_all() {
+    local key="$1"
+    bind -m vi-command -x "$key: __fzf_lazy"
+    bind -m vi-insert -x "$key: __fzf_lazy"
+}
+__fzf_bind_all '"\C-t"'
+__fzf_bind_all '"\C-r"'
+__fzf_bind_all '"\ec"'
+unset -f __fzf_bind_all
 
 # Enable rose-pine theme.
 export FZF_DEFAULT_OPTS="
