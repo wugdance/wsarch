@@ -26,5 +26,10 @@ export PATH="$PATH:${GOPATH:-$HOME/go}/bin"
 
 export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
 
+export PI_CODING_AGENT_DIR="${HOME}/.config/pi"
+
+export NODE_EXTRA_CA_CERTS="/etc/ssl/certs/ca-certificates.crt"
+
+
 # Starship init has to be at the end of the config.
 eval "$(starship init bash)"

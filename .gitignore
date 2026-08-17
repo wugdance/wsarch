@@ -1,2 +1,4 @@
 config/tmux/plugins/*
 config/neovim/lua/config/local.lua
+config/pi/models.json
+config/pi/sessions/*
