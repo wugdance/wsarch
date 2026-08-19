@@ -2,5 +2,16 @@
   "lastChangelogVersion": "0.84.2",
   "defaultProvider": "ozon-provider",
   "defaultModel": "DeepSeek-Coder",
-  "theme": "rose-pine"
+  "theme": "rose-pine",
+  "hideThinkingBlock": true,
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "collapseChangelog": true,
+  "quietStartup": true,
+  "doubleEscapeAction": "tree",
+  "warnings": {
+    "anthropicExtraUsage": true
+  },
+  "tuiMode": "regular"
 }
