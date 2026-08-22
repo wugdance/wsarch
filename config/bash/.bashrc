@@ -22,11 +22,13 @@ source "${HOME}/.cargo/env"
 bind 'set enable-bracketed-paste on'
 
 export PATH=$PATH:~/.o3-cli/bin
+
+# o3 platform needs a Python <3.14 (Arch default is 3.14). Shadow only for o3
+# with a 3.12 that has pip, leaving the system python untouched.
+o3() { PATH="$HOME/.o3-python:$PATH" command o3 "$@"; }
 export PATH="$PATH:${GOPATH:-$HOME/go}/bin"
 
 export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
-
-export PI_CODING_AGENT_DIR="${HOME}/.config/pi"
 
 export NODE_EXTRA_CA_CERTS="/etc/ssl/certs/ca-certificates.crt"
 

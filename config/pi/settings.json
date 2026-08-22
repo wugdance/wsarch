@@ -2,16 +2,24 @@
   "lastChangelogVersion": "0.84.2",
   "defaultProvider": "ozon-provider",
   "defaultModel": "DeepSeek-Coder",
+  "defaultThinkingLevel": "minimal",
   "theme": "rose-pine",
-  "hideThinkingBlock": true,
+  "hideThinkingBlock": false,
   "markdown": {
     "mermaid": "streaming"
   },
   "collapseChangelog": true,
   "quietStartup": true,
   "doubleEscapeAction": "tree",
+  "retry": {
+    "maxRetries": 5,
+    "baseDelayMs": 3000
+  },
   "warnings": {
     "anthropicExtraUsage": true
   },
-  "tuiMode": "regular"
+  "tuiMode": "regular",
+  "compaction": {
+    "enabled": true
+  }
 }

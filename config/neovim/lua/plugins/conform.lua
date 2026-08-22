@@ -34,10 +34,7 @@ return {
 
             if
                 filetype == "markdown"
-                and (
-                    string.match(bufname, "/opencode/")
-                    or string.match(bufname, "/openspec/")
-                )
+                and (string.match(bufname, "SKILL.md"))
             then
                 -- Return nothing to skip format on save
                 return
