@@ -2,7 +2,7 @@
   "lastChangelogVersion": "0.84.2",
   "defaultProvider": "ozon-provider",
   "defaultModel": "DeepSeek-Coder",
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "low",
   "theme": "rose-pine",
   "hideThinkingBlock": false,
   "markdown": {
