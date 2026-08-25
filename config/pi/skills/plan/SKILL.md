@@ -5,7 +5,12 @@ disable-model-invocation: true
 ---
 
 Read the current session's conversation to extract the shared understanding 
-of the idea, then write an implementation plan into `./.agent/PLAN.md`.
+of the idea, then write an implementation plan into the file:
+
+```bash
+"${PWD}/.agent/PLAN.md"
+```
+
 
 The plan is primarily intended for the agent, so include all the details that 
 will help to optimize their work.
