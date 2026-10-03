@@ -25,9 +25,9 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>d",
+    "<leader>ld",
     vim.diagnostic.open_float,
-    { desc = "Open float diagnostic." }
+    { desc = "Open float diagnostic for the current line." }
 )
 vim.keymap.set(
     "n",

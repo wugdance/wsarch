@@ -18,3 +18,11 @@
 - tmux popup ideas:
   - [ ] create a unique note
   - [ ] neovim <esc> and \<ctrl+c> interference
+- [ ] Research Neovim sessions with `mini.sessions`
+  - Understand what should be persisted: buffers, splits, tabs, cursor
+    positions.
+  - Decide whether sessions should be automatic or manual.
+  - Test Neovim session restore separately from tmux.
+  - Only after that, evaluate whether `tmux-resurrect` should integrate with
+    Neovim sessions.
+- [ ] `mini.surround` add extra spaces with add motion

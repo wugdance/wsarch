@@ -8,10 +8,12 @@ source "${BASHRC_DIR}/funcs.sh"
 source "${BASHRC_DIR}/fzf.sh"
 
 export EDITOR="nvim"
+export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 export REQUESTS_CA_BUNDLE=/etc/ssl/cert.pem
+export NODE_USE_SYSTEM_CA=1
 
 source /usr/share/bash-completion/bash_completion
 
@@ -22,6 +24,9 @@ source "${HOME}/.cargo/env"
 bind 'set enable-bracketed-paste on'
 
 export PATH=$PATH:~/.o3-cli/bin
+
+export GITLAB_TOKEN=$(cat ~/.tokens/gitlab-token)
+export GITLAB_HOST="gitlab.ozon.ru"
 
 # o3 platform needs a Python <3.14 (Arch default is 3.14). Shadow only for o3
 # with a 3.12 that has pip, leaving the system python untouched.

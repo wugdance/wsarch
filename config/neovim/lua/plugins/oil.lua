@@ -14,7 +14,7 @@ return {
         },
     },
     -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     keys = {
         { "<leader>e", "<CMD>Oil<CR>", desc = "Explore with Oil" },
     },

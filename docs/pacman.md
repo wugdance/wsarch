@@ -1,12 +1,15 @@
-# Remove pacman package
+# pacman
+
+## Remove pacman package
 
 ```bash
 sudo pacman -Rcns <package>
 ```
--R: remove
--c: cascade (check what will get removed)
--n: no save (when I remove something I really want it gone)
--s: remove dependencies (mostly for cleanup)
+
+- -R: remove
+- -c: cascade (check what will get removed)
+- -n: no save (when I remove something I really want it gone)
+- -s: remove dependencies (mostly for cleanup)
 
 If there are potential problems with -c, cancel and do
 
@@ -14,10 +17,9 @@ If there are potential problems with -c, cancel and do
 sudo pacman -Runs <package>
 ```
 
--u: avoid removing packages if other packages depend on it.
+- -u: avoid removing packages if other packages depend on it.
 
-
-# Search for packages
+## Search for packages
 
 ```bash
 # Search for all python-related packages
