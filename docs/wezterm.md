@@ -26,6 +26,14 @@ renderer, and hyperlink renderer. Do not recreate multiplexing in WezTerm.
 WezTerm starts in the `WSL:archlinux` domain at `~`. It does not automatically
 attach tmux. `Ctrl+Shift+p` opens PowerShell in the Windows user profile.
 
+## Glass material
+
+WezTerm owns the single glass surface. The Windows config uses Acrylic with
+`window_background_opacity = 0.94`. tmux and Neovim use transparent/default
+backgrounds so they do not paint over that material. They keep Rose Pine
+accents for contrast, and neither multiplexer adds its own blur or blend layer.
+The Neovim status line intentionally keeps its current styling for now.
+
 ## Input
 
 The tmux prefix is `Ctrl+Space`; there is no WezTerm leader. Terminal paste uses
@@ -47,5 +55,4 @@ while tmux or Neovim is using mouse reporting. Plain click never opens links.
 - Update Symbols Nerd Font Mono to v3.5.1.
 - Add the Telescope/`mini.icons` provider mock.
 - Add WezTerm bootstrap/install.
-- Add the glass/translucent visual pass.
 - Revisit a QuickSelect experiment later.

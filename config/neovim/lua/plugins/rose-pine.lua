@@ -11,6 +11,16 @@ return {
                 italic = false,
             },
             highlight_groups = {
+                -- Keep the primary editing area transparent so the WezTerm
+                -- acrylic window material is visible. Floats intentionally keep
+                -- their existing behavior, and separate blend layers are not
+                -- used.
+                Normal = { bg = "none" },
+                NormalNC = { bg = "none" },
+                SignColumn = { bg = "none" },
+                FoldColumn = { bg = "none" },
+                EndOfBuffer = { bg = "none" },
+
                 TelescopeBorder = { fg = "highlight_high", bg = "none" },
                 TelescopeNormal = { bg = "none" },
                 TelescopePromptNormal = { fg = "text", bg = "none" },

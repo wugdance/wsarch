@@ -19,7 +19,11 @@ config.enable_tab_bar = false
 -- Preserve the existing visual setup. GlazeWM owns outer spacing; tmux owns
 -- internal pane styling. Do not add WezTerm padding here.
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 1
+
+-- One glass surface: WezTerm owns the window material. tmux and Neovim use
+-- transparent backgrounds rather than adding separate blur layers.
+config.window_background_opacity = 0.92
+config.win32_system_backdrop = "Acrylic"
 config.color_scheme = "rose-pine"
 
 -- JetBrains Mono is WezTerm's current effective main font. Symbols Nerd Font
@@ -59,11 +63,11 @@ config.keys = {
     {
         key = "p",
         mods = "CTRL|SHIFT",
-        action = act.SpawnCommandInNewWindow {
+        action = act.SpawnCommandInNewWindow({
             domain = { DomainName = "local" },
             cwd = wezterm.home_dir,
             args = { "powershell.exe" },
-        },
+        }),
     },
 }
 

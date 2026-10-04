@@ -14,7 +14,6 @@ nvim/shada/main.shada.tmp.c for writing: read-only file system
 
 ```
 
-02. `mini.surround` add extra spaces with add motion.
 03. Research Neovim sessions with `mini.sessions`
     - Understand what should be persisted: buffers, splits, tabs, cursor
       positions.
@@ -39,7 +38,5 @@ nvim/shada/main.shada.tmp.c for writing: read-only file system
 09. LSP Symbols with a side bar.
 10. Codex speach-to-text mode.
 11. debugger for python
-12. Disable treating enter in codex vim insert mode as `run` and treat it as
-    new line.
-13. Yellow warning after changin config that own the current neovim state.
-14. What modern neovim 0.12 features are missed in my config?
+12. Yellow warning after changin config that own the current neovim state.
+13. What modern neovim 0.12 features are missed in my config?
