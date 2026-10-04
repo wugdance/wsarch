@@ -43,6 +43,7 @@ source boot/modules/starship.sh
 source boot/modules/fzf.sh
 
 source boot/modules/opencode.sh
+source boot/modules/agents.sh
 
 # ssh-agent.service depends on env var from .bashrc.
 # source setup/bash.sh && source boot/modules/openssh.sh
