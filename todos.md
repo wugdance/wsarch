@@ -1,15 +1,9 @@
-- [ ] add improved pdb for python
 - [ ] treesitter-objects
-- [ ] macros/commands/mappings/something to init pydantic model
 - [ ] fzf git pick changes for commit with preview
 - [ ] lazydev for neovim
 - [ ] own colorscheme
 
-1. When I open tmux popup it conflicts with a pane that is rendered. For
-   example. I have three panes and one of them is active codex agent. And if
-   agent working and actively render at the moment it overwrites popup and
-   exactly that part of popup that is intersect with this pane.
-2. Codex has erros during bash command execution:
+1. Codex has erros during bash command execution:
 
 ```text
 └ /home/wugdance/wsarch/config/bash/fzf.sh: line 8: bind: warning: line editing not
@@ -20,26 +14,32 @@ nvim/shada/main.shada.tmp.c for writing: read-only file system
 
 ```
 
-03. `mini.surround` add extra spaces with add motion.
-04. Research Neovim sessions with `mini.sessions`
+02. `mini.surround` add extra spaces with add motion.
+03. Research Neovim sessions with `mini.sessions`
     - Understand what should be persisted: buffers, splits, tabs, cursor
       positions.
     - Decide whether sessions should be automatic or manual.
     - Test Neovim session restore separately from tmux.
     - Only after that, evaluate whether `tmux-resurrect` should integrate with
       Neovim sessions.
-05. migrating to `vim.pack`.
-06. Glass material design.
-07. Improve neovim python dev experience:
+04. migrating to `vim.pack`.
+05. Glass material design.
+06. Improve neovim python dev experience:
     - make import string from python buffer
     - make pytest command from python buffer
-08. Research Neovim sessions with `mini.sessions`
+    - pydantic model snippet
+07. Research Neovim sessions with `mini.sessions`
     - Understand what should be persisted: buffers, splits, tabs, cursor
       positions.
     - Decide whether sessions should be automatic or manual.
     - Test Neovim session restore separately from tmux.
     - Only after that, evaluate whether `tmux-resurrect` should integrate with
       Neovim sessions.
-09. Adding global agent folder to config.
-10. Automated wsarch setup.
-11. Replace tmux copy mode with WezTerm.
+08. Automated wsarch setup.
+09. LSP Symbols with a side bar.
+10. Codex speach-to-text mode.
+11. debugger for python
+12. Disable treating enter in codex vim insert mode as `run` and treat it as
+    new line.
+13. Yellow warning after changin config that own the current neovim state.
+14. What modern neovim 0.12 features are missed in my config?
