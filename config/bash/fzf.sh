@@ -5,6 +5,10 @@ __fzf_lazy() {
 }
 __fzf_bind_all() {
     local key="$1"
+
+    # Keybindings require readline and are meaningful only in interactive Bash.
+    [[ $- == *i* ]] || return 0
+
     bind -m vi-command -x "$key: __fzf_lazy"
     bind -m vi-insert -x "$key: __fzf_lazy"
 }
@@ -13,11 +17,7 @@ __fzf_bind_all '"\C-r"'
 __fzf_bind_all '"\ec"'
 unset -f __fzf_bind_all
 
-# Enable rose-pine theme.
-export FZF_DEFAULT_OPTS="
-	--color=fg:#908caa,bg:#191724,hl:#ebbcba
-	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-	--color=border:#403d52,header:#31748f,gutter:#191724
-	--color=spinner:#f6c177,info:#9ccfd8
-	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+# One fzf options file is shared by interactive Bash and tmux popups. The
+# transparent main background/gutter lets the WezTerm glass material show.
+export FZF_DEFAULT_OPTS_FILE="${HOME}/.config/fzf/default-opts"
 

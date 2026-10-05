@@ -20,8 +20,10 @@ source /usr/share/bash-completion/bash_completion
 source "${HOME}/.local/bin/env"
 source "${HOME}/.cargo/env"
 
-# Enable Bracketed Paste so pasted multi-line blocks do not execute line-by-line
-bind 'set enable-bracketed-paste on'
+# Bracketed paste is a readline feature, so only enable it interactively.
+if [[ $- == *i* ]]; then
+    bind 'set enable-bracketed-paste on'
+fi
 
 export PATH=$PATH:~/.o3-cli/bin
 
