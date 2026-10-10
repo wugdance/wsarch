@@ -69,15 +69,12 @@ config.keys = {
             args = { "powershell.exe" },
         }),
     },
+    {
+        key = "v",
+        mods = "CTRL",
+        action = act.PasteFrom("Clipboard"),
+    },
 }
-
--- Disabled intentionally: plain Ctrl+v must reach applications such as
--- Neovim, where it is visual block mode. Use Ctrl+Shift+v for terminal paste.
--- {
---     key = "v",
---     mods = "CTRL",
---     action = act.PasteFrom("Clipboard"),
--- },
 
 -- Explicit allowlist: do not turn every URL/email into a link. Only the work
 -- ticket format used by the current workflow is clickable.

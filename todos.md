@@ -47,3 +47,12 @@ nvim/shada/main.shada.tmp.c for writing: read-only file system
 16. review flow
 17. making sqlcmd plugin with learning lua
 18. open MR for the current branch (bash).
+19. codex error during execution some bash commands
+
+```text
+• Ran curl -L --max-time 45 -s https://docs.gitlab.com/ci/yaml/ -o /tmp/gitlab-yaml.html && python - <<'PY'
+  │ from pathlib import Path
+  │ html=Path('/tmp/gitlab-yaml.html').read_text(errors='ignore')
+  │ … +6 lines
+  └ Unable to open session log file "/home/wugdance/.cache/starship/session_2832914432309591.log": Os { code: 30, kind: ReadOnlyFilesystem, message: "Read-only file system" }!
+```
