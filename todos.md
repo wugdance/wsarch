@@ -56,3 +56,4 @@ nvim/shada/main.shada.tmp.c for writing: read-only file system
   │ … +6 lines
   └ Unable to open session log file "/home/wugdance/.cache/starship/session_2832914432309591.log": Os { code: 30, kind: ReadOnlyFilesystem, message: "Read-only file system" }!
 ```
+20. rewrite tmux popup with floating panes

@@ -42,6 +42,8 @@ source boot/modules/tmux.sh
 source boot/modules/starship.sh
 source boot/modules/fzf.sh
 
+source boot/modules/tuicr.sh
+
 source boot/modules/opencode.sh
 source boot/modules/agents.sh
 

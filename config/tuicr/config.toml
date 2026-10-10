@@ -1,0 +1,7 @@
+theme = "rose-pine"
+diff_view = "unified"
+show_file_list = true
+
+single_file_view = true
+show_reviewed = false
+comment_vim = true
