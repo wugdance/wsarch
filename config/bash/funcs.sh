@@ -25,3 +25,24 @@ for __nvm_cmd in node npm npx yarn pnpm nvm pi; do
 done
 unset __nvm_cmd
 
+
+function glab-ci {
+    local sha url
+
+    sha=$(git rev-parse HEAD) || return 1
+
+    url=$(glab ci list \
+        --sha "$sha" \
+        --output json \
+        --jq '.[0].web_url') || {
+        echo "Failed to find GitLab pipeline for commit $sha" >&2
+        return 1
+    }
+
+    if [[ -z "$url" || "$url" == "null" ]]; then
+        echo "No GitLab pipeline found for commit $sha" >&2
+        return 1
+    fi
+
+    explorer.exe "$url" >/dev/null 2>&1 || true
+}
