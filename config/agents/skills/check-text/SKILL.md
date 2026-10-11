@@ -1,17 +1,15 @@
 ---
 name: check-text
-description: Check the provided file for mistakes and fix them.
+description: Inspect the provided file and fix mistakes.
 disable-model-invocation: true
 ---
 
-Fix typos, grammar, syntax, word order, and punctuation in the text of the 
-provided file.
+Inspect the provided file for mistakes:
 
-Group and show the fixed mistakes in a review table afterward. The table 
-should include:
+- typos
+- punctuation
+- grammar
 
-- the line number where the mistake was
-- the essence of the mistake
-- the applied fix
+Fix them. Avoid using em dashes entirely.
 
-Avoid using em dashes (—) entirely.
+Show fixed mistakes in a review table afterward.

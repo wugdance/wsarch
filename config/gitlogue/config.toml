@@ -1,0 +1,11 @@
+# Keep syntax highlighting consistent with git-delta.
+theme = "rose-pine"
+
+# Defaults are explicit so the screensaver behaves predictably.
+speed = 30
+background = false
+order = "random"
+loop = false
+
+ignore_patterns = []
+speed_rules = []

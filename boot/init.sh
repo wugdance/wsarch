@@ -36,7 +36,9 @@ source boot/modules/lang/python.sh
 source boot/modules/neovim.sh
 
 # bat provides the theme for git-delta.
-source boot/modules/bat.sh && source boot/git.sh
+source boot/modules/bat.sh && source boot/modules/git.sh
+
+source boot/modules/gitlogue.sh
 
 source boot/modules/tmux.sh
 source boot/modules/starship.sh
