@@ -4,7 +4,7 @@ theme = "rose-pine"
 # Defaults are explicit so the screensaver behaves predictably.
 speed = 30
 background = false
-order = "random"
+order = "asc"
 loop = false
 
 ignore_patterns = []

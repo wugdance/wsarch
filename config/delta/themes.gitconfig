@@ -13,10 +13,12 @@
     file-removed-label = [-]
     file-renamed-label = [->]
     hunk-header-decoration-style = "#393552" box ul
-    plus-style = "#9ccfd8" "#1f1d2e"
-    plus-emph-style = "#e0def4" "#9ccfd8"
-    minus-style = "#eb6f92" "#1f1d2e"
-    minus-emph-style = "#e0def4" "#eb6f92"
+    # Rose Pine Moon surface/overlay for subtle, palette-matched diff rows.
+    # Soft Rose Pine-inspired tints: gentle base rows, clearer changed rows.
+    plus-style = syntax "#2b3a44"
+    plus-emph-style = syntax bold "#3d5260"
+    minus-style = syntax "#46303a"
+    minus-emph-style = syntax bold "#5c4149"
     line-numbers-minus-style = "#eb6f92"
     line-numbers-plus-style = "#9ccfd8"
     line-numbers-left-style = "#6e6a86"

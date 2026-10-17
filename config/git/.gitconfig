@@ -17,14 +17,23 @@
 	features = mellow-barbet
 	syntax-theme = rose-pine
 	line-numbers = true
-	side-by-side = true
+	side-by-side = false
 	true-color = always
 
 [merge]
 	conflictstyle = diff3
+    tool = nvimdiff
+
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+[mergetool "nvimdiff"]
+    layout = "LOCAL,BASE,REMOTE / MERGED"
 
 [diff]
 	colorMoved = default
+    tool = nvimdiff
 
 [include]
 	path = ~/.config/git/personal

@@ -10,6 +10,10 @@ Inspect the provided file for mistakes:
 - punctuation
 - grammar
 
-Fix them. Avoid using em dashes entirely.
+Fix them.
+
+Avoid using em dashes entirely.
+
+Avoid checking source code. Focus on plain text only.
 
 Show fixed mistakes in a review table afterward.
