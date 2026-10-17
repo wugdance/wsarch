@@ -1,7 +1,8 @@
--- Open tmux scrollback captured as ANSI text in a searchable Neovim buffer.
+--- Open tmux scrollback captured as ANSI text in a searchable Neovim buffer.
+
 local M = {}
 
-local transport_buffer_name = "wsarch-scrollback"
+local config = nil
 
 local function is_safe_empty_buffer(bufnr)
     if vim.api.nvim_buf_get_name(bufnr) ~= "" then
@@ -41,7 +42,11 @@ local function prepare_viewer_buffer(bufnr)
     vim.bo[bufnr].modifiable = true
 
     vim.api.nvim_set_option_value("wrap", false, { win = 0, scope = "local" })
-    vim.api.nvim_set_option_value("colorcolumn", "", { win = 0, scope = "local" })
+    vim.api.nvim_set_option_value(
+        "colorcolumn",
+        "",
+        { win = 0, scope = "local" }
+    )
     vim.api.nvim_set_option_value("spell", false, { win = 0, scope = "local" })
     vim.api.nvim_set_option_value("list", false, { win = 0, scope = "local" })
     vim.diagnostic.enable(false, { bufnr = bufnr })
@@ -62,7 +67,8 @@ local function close_viewer(bufnr)
     -- If the same scratch buffer is shown in another window, keep it. Once no
     -- window displays it, delete it so discarded edits do not stay in memory.
     local is_visible = vim.iter(vim.api.nvim_list_wins()):any(function(win)
-        return vim.api.nvim_win_is_valid(win) and vim.api.nvim_win_get_buf(win) == bufnr
+        return vim.api.nvim_win_is_valid(win)
+            and vim.api.nvim_win_get_buf(win) == bufnr
     end)
 
     if not is_visible then
@@ -70,14 +76,22 @@ local function close_viewer(bufnr)
     end
 end
 
-function M.setup()
+local function register_command()
     vim.api.nvim_create_user_command("TmuxScrollback", function()
         if not vim.env.TMUX then
-            vim.notify("TmuxScrollback can only be used inside tmux.", vim.log.levels.WARN)
+            vim.notify(
+                "TmuxScrollback can only be used inside tmux.",
+                vim.log.levels.WARN
+            )
             return
         end
 
-        local output = vim.fn.system({ "tmux", "show-buffer", "-b", transport_buffer_name })
+        local output = vim.fn.system({
+            "tmux",
+            "show-buffer",
+            "-b",
+            config.transport_buffer_name,
+        })
         if vim.v.shell_error ~= 0 then
             vim.notify(
                 "Could not read tmux scrollback:\n" .. vim.trim(output),
@@ -116,7 +130,10 @@ function M.setup()
         vim.bo[bufnr].modified = false
 
         -- Position at the true end once, then center it.
-        vim.api.nvim_win_set_cursor(0, { vim.api.nvim_buf_line_count(bufnr), 0 })
+        vim.api.nvim_win_set_cursor(
+            0,
+            { vim.api.nvim_buf_line_count(bufnr), 0 }
+        )
         vim.cmd("normal! zz")
 
         vim.keymap.set("n", "q", function()
@@ -129,10 +146,24 @@ function M.setup()
         })
 
         -- The tmux buffer is only a transport; Neovim now owns the copy.
-        vim.fn.system({ "tmux", "delete-buffer", "-b", transport_buffer_name })
+        vim.fn.system({
+            "tmux",
+            "delete-buffer",
+            "-b",
+            config.transport_buffer_name,
+        })
     end, {
         desc = "Open tmux scrollback with ANSI colors.",
     })
+end
+
+--- Configure the scrollback viewer.
+---@param opts table?
+function M.setup(opts)
+    config = vim.tbl_deep_extend("force", {
+        transport_buffer_name = "wsarch-scrollback",
+    }, opts or {})
+    register_command()
 end
 
 return M

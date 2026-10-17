@@ -4,7 +4,6 @@ require("config.keymaps")
 require("config.autocmds")
 require("config.bigfile")
 require("config.lsp")
-require("config.local")
 
 vim.api.nvim_create_autocmd("VimEnter", {
     desc = "Load oil.nvim when opening a directory",
