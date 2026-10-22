@@ -6,6 +6,7 @@ source "${BASHRC_DIR}/history.sh"
 source "${BASHRC_DIR}/aliases.sh"
 source "${BASHRC_DIR}/funcs.sh"
 source "${BASHRC_DIR}/fzf.sh"
+source "${BASHRC_DIR}/fzd.sh"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
