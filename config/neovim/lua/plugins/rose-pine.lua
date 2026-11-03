@@ -9,6 +9,7 @@ return {
             styles = {
                 bold = false,
                 italic = false,
+                transparency = true,
             },
             highlight_groups = {
                 -- Keep the primary editing area transparent so the WezTerm

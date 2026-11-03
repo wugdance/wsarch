@@ -34,7 +34,10 @@ return {
 
             if
                 filetype == "markdown"
-                and (string.match(bufname, "SKILL.md"))
+                and (
+                    string.match(bufname, "SKILL.md")
+                    or (string.match(bufname, "work/nuke"))
+                )
             then
                 -- Return nothing to skip format on save
                 return
@@ -53,9 +56,9 @@ return {
                     "79",
                 },
             },
-            ruff_format = {
-                append_args = { "--line-length", "79" },
-            },
+            -- ruff_format = {
+            --     append_args = { "--line-length", "79" },
+            -- },
             mdformat = {
                 append_args = { "--wrap", "79", "--number" },
             },
