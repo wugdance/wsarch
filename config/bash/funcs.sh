@@ -46,3 +46,9 @@ function pipeline {
 
     explorer.exe "$url" >/dev/null 2>&1 || true
 }
+
+function fcd {
+    local dir
+    dir=$(fd --type d --min-depth 1 | fzf) && cd "$dir"
+}
+
