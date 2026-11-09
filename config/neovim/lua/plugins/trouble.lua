@@ -9,7 +9,7 @@ return {
     keys = {
         {
             "<leader>tx",
-            "<cmd>Trouble diagnostics toggle<cr>",
+            "<cmd>Trouble diagnostics toggle win.position=bottom<cr>",
             desc = "Diagnostics (Trouble)",
         },
         {

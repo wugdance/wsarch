@@ -26,7 +26,7 @@ done
 unset __nvm_cmd
 
 
-function glab-ci {
+function pipeline {
     local sha url
 
     sha=$(git rev-parse HEAD) || return 1
