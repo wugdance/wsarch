@@ -3,6 +3,14 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", {
     desc = "Clear highlighted search matches.",
 })
 
+-- Load the builtin optional undotree plugin only when first requested.
+vim.keymap.set("n", "<leader>u", function()
+    vim.cmd.packadd("nvim.undotree")
+    require("undotree").open()
+end, {
+    desc = "Toggle undotree.",
+})
+
 vim.keymap.set("n", "<leader>bn", function()
     local path = vim.fs.relpath(vim.loop.cwd(), vim.api.nvim_buf_get_name(0))
     vim.fn.setreg("+", path)

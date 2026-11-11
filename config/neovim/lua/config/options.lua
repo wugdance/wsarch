@@ -18,6 +18,9 @@ vim.opt.ignorecase = true
 -- ... but respect case if at least one capital letter exists.
 vim.opt.smartcase = true
 
+-- Persist undo history between Neovim sessions.
+vim.opt.undofile = true
+
 vim.opt.autowrite = true
 
 -- Show matches while you are typing the search pattern. So in a long file
