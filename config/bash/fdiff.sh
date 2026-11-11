@@ -1,33 +1,33 @@
 # Review changed files with fzf/delta/nvim.
 #
 # Usage:
-#   fzd                       # like plain `git diff`, plus untracked files
-#   fzd HEAD                  # working tree vs HEAD
-#   fzd master..HEAD          # committed branch changes only
-#   fzd main...HEAD           # committed changes from merge-base
-#   fzd origin/main           # working tree vs origin/main
+#   fdiff                       # like plain `git diff`, plus untracked files
+#   fdiff HEAD                  # working tree vs HEAD
+#   fdiff master..HEAD          # committed branch changes only
+#   fdiff main...HEAD           # committed changes from merge-base
+#   fdiff origin/main           # working tree vs origin/main
 #
 # Keys:
 #   Normal mode: <j/k> move, <ctrl-d>/<ctrl-u> delta page, <enter> delta,
 #                <ctrl-e> nvim (refresh diff/list on exit), <q> quit
 #   Insert mode: <i> enters, <esc> returns to normal mode, <enter> accepts
 
-# Emit fzd's candidate list. The first line is fzf's status header.
-function __fzd_list {
+# Emit fdiff's candidate list. The first line is fzf's status header.
+function __fdiff_list {
     local -a diff_args=()
 
-    if [[ -n "${FZD_DIFF_ARGS-}" ]]; then
-        # FZD_DIFF_ARGS is built from printf %q in fzd below, so this is safe.
-        eval "diff_args=(${FZD_DIFF_ARGS-})"
+    if [[ -n "${FDIFF_DIFF_ARGS-}" ]]; then
+        # FDIFF_DIFF_ARGS is built from printf %q in fdiff below, so this is safe.
+        eval "diff_args=(${FDIFF_DIFF_ARGS-})"
     fi
 
     git status --short --branch --untracked-files=no | sed -n '1p'
     git diff --name-only "${diff_args[@]}"
     git ls-files --others --exclude-standard
 }
-export -f __fzd_list
+export -f __fdiff_list
 
-function fzd {
+function fdiff {
     local -a diff_args=("$@")
     local diff_args_str diff_cmd preview status status_lines
     local -a header_args=()
@@ -50,7 +50,7 @@ function fzd {
         header_args=(--header-lines="$status_lines" --header-lines-border=line)
     fi
 
-    FZD_DIFF_ARGS="$diff_args_str" fzf \
+    FDIFF_DIFF_ARGS="$diff_args_str" fzf \
         --prompt 'normal > ' \
         --layout=reverse-list \
         "${header_args[@]}" \
@@ -60,6 +60,6 @@ function fzd {
         --bind 'i:unbind(j,k,ctrl-d,ctrl-u,enter,ctrl-e,i,q)+change-prompt(insert> )' \
         --bind 'esc:rebind(j,k,ctrl-d,ctrl-u,enter,ctrl-e,i,q)+change-prompt(normal> )' \
         --bind "enter:execute($diff_cmd | delta)" \
-        --bind 'ctrl-e:execute(test -f {} && nvim {} >/dev/tty </dev/tty || true)+refresh-preview+reload-sync(__fzd_list)' \
-        < <(__fzd_list)
+        --bind 'ctrl-e:execute(test -f {} && nvim {} >/dev/tty </dev/tty || true)+refresh-preview+reload-sync(__fdiff_list)' \
+        < <(__fdiff_list)
 }

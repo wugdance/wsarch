@@ -42,7 +42,8 @@ silently fix them.
      procedure are imperative and numbered; acronyms are expanded on first use.
 4. **Output the checklist**: list items as "Original → Suggestion → Reason",
    with line numbers or short quotes. Mark uncertain items `[verify]` instead
-   of forcing a change.
+   of forcing a change. Put uncertain items separetly. It helps with 
+   clearly identify what needs attention.
 5. **Close with statistics**: N items total, broken down by the categories
    above (list only categories that have items) — so the author sees the
    distribution at a glance.

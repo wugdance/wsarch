@@ -52,7 +52,7 @@ vim.o.smartindent = true
 -- Copy indent from current line when starting new line.
 vim.o.autoindent = true
 -- Always keep lines above/below cursor unless at start/end of file.
-vim.o.scrolloff = 4
+vim.o.scrolloff = 8
 
 -- Yank to system clipboard.
 vim.opt.clipboard = "unnamedplus"
