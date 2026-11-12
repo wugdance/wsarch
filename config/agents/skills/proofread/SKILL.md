@@ -60,20 +60,56 @@ silently fix them.
 
 ## Minimal example
 
-Input snippet:
-
-```text
-This function will be called by the system after the data is ready, you can use it to basically handle the registration of the callback, the timeout is 5 s, examples on github can be referenced.
-```
-
 Output checklist:
 
 ```text
-1. [Style] "will be called by the system" → "the system calls" (passive → active)
-2. [Style] "basically handle" → "handle" (cut filler word)
-3. [Terminology] "callback" / "callback function" → unify on the most frequent form (one concept, one name)
-4. [Grammar] "after the data is ready, you can use it" → split after "ready." into two sentences (run-on sentence)
-5. [Inline code and proper nouns] "github" → "GitHub" (official casing)
+#                      1
+Category               Punctuation
+Lines                  3, 42
+Original → Suggestion  locally - no interview; restructure - but → use em dashes
+Reason                 Matches the em dashes used elsewhere in the document.
+───────────────────────────────────────────────────────────────────────────────────────
+#                      2
+Category               Style
+Lines                  23–24
+Original → Suggestion  it should have been broken into sub-project specs → break it
+                       into sub-project specs
+Reason                 Active voice is more direct.
+───────────────────────────────────────────────────────────────────────────────────────
+#                      3
+Category               Structure
+Lines                  16
+Original → Suggestion  DRY. YAGNI. TDD. → expand each acronym on first use
+Reason                 Follows the document’s acronym-expansion convention.
+───────────────────────────────────────────────────────────────────────────────────────
+#                      4
+Category               Grammar
+Lines                  128, 140
+Original → Suggestion  Run test → Run the test
+Reason                 Missing article before a singular countable noun.
+───────────────────────────────────────────────────────────────────────────────────────
+#                      5
+Category               Code & proper nouns
+Lines                  110–112, 130, 142, 148
+Original → Suggestion  mixed path placeholders → use one consistent placeholder style
+Reason                 Keeps the template internally consistent.
+───────────────────────────────────────────────────────────────────────────────────────
+#                      6
+Category               Terminology
+Lines                  80 vs. 117, 158, 165
+Original → Suggestion  executors → implementers
+Reason                 Unifies the term for the person carrying out the plan.
+───────────────────────────────────────────────────────────────────────────────────────
+
+Uncertain items:
+
+1. [verify] Line 50 — fresh reviewer's gate: confirm whether this means a dedicated
+ review checkpoint; if so, review gate may be clearer.
+
+2. [verify] Lines 152–153 — prefix of the current task number: confirm whether this
+ means a ticket/task ID prefix such as SDMT-12345 and whether it is extracted from
+ the branch name.
+
 
 Statistics: 5 items — style 2, terminology 1, grammar 1, code & proper nouns 1.
 ```

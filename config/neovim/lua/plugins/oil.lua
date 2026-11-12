@@ -8,6 +8,9 @@ return {
             ["<C-l>"] = false,
             ["<C-r>"] = "actions.refresh",
         },
+        lsp_file_methods = {
+            autosave_changes = "unmodified",
+        },
         watch_for_changes = true,
         view_options = {
             show_hidden = true,
