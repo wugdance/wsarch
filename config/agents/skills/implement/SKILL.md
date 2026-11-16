@@ -1,7 +1,19 @@
 ---
 name: implement
-description: Implement the plan provided by the user
+description: "Implement a piece of work based on a spec or set of tickets."
 disable-model-invocation: true
 ---
 
-Read the plan file provided by the user. Implement it.
+Implement the work described by the user in the spec or tickets.
+
+If the user passes a ticket reference, fetch it from the issue tracker and 
+state its title before starting. If the reference is ambiguous, ask.
+
+Call the Skill tool with "tdd" where possible, at pre-agreed seams.
+
+Run typechecking regularly, single test files regularly, and the full test 
+suite once at the end.
+
+Once done, call the Skill tool with "code-review" to review the work.
+
+Commit your work to the current branch.
