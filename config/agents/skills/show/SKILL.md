@@ -129,7 +129,7 @@ function expandSkill(command: string): string {
   open it for the user:
 
 ```
-Bash(open path/to/show-me-{description}.html)
+vhtml ~/tmp/show-me-{description}.html)
 ```
 
 ### guidance
