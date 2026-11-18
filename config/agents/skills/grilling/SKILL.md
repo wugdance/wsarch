@@ -20,7 +20,7 @@ Format a question as follows:
 
 <question body, might be multiple paragraphs, including multiple choices>
 
-**Recomendation.** 
+**Recommendation.** 
 
 <your recommended answer>
 ```

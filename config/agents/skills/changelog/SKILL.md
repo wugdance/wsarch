@@ -83,7 +83,7 @@ consistently updated changelog.
 
 Semver is used to track versions.
 
-Dates format is `YYYY-MM-DD`.
+Date format is `YYYY-MM-DD`.
 
 Changelog file path is `./CHANGELOG.md`. 
 
@@ -91,7 +91,6 @@ Changelog file path is `./CHANGELOG.md`.
 
 Inspect the project commits log.
 
-Identify changes that are not reflected in the changelog file and but must be
-reflected.
+Identify changes that are not reflected in the changelog file but must be.
 
 Update changelog file according to them.
