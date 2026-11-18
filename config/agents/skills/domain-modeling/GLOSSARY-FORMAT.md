@@ -38,7 +38,7 @@ _Avoid_: Client, buyer, account
 
 ## Single context
 
-Each repo is a single context: one `GLOSSARY.md` at the repo root.
+Each repo is a single context: one `./GLOSSARY.md` at the repo root.
 
-If a root `GLOSSARY.md` does not exist, create it lazily when the first term is
-resolved.
+If a root `./GLOSSARY.md` does not exist, create it lazily when the first term
+is resolved.

@@ -25,8 +25,8 @@ Single context for a repo:
 │       └── 0002-postgres-for-write-model.md
 ```
 
-Create files lazily: only when you have something to write. If no `GLOSSARY.md`
-exists, create one when the first term is resolved. If no `docs/adr/` exists,
+Create files lazily: only when you have something to write. If no `./GLOSSARY.md`
+exists, create one when the first term is resolved. If no `./docs/adr/` exists,
 create it when the first ADR is needed.
 
 ## During the session
@@ -57,9 +57,9 @@ just said partial cancellation is possible. Which is right?"
 
 ### Update GLOSSARY.md inline
 
-When a term is resolved, update `GLOSSARY.md` right there. Don't batch these
+When a term is resolved, update `./GLOSSARY.md` right there. Don't batch these
 up: capture them as they happen. Use the format in
-[GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md).
+[GLOSSARY-FORMAT.md](GLOSSARY-FORMAT.md).
 
 `GLOSSARY.md` should be totally devoid of implementation details. Do not treat
 `GLOSSARY.md` as a spec, a scratch pad, or a repository for implementation
@@ -76,4 +76,4 @@ Only offer to create an ADR when all three are true:
    picked one for specific reasons
 
 If any of the three is missing, skip the ADR. Use the format in
-[ADR-FORMAT.md](./ADR-FORMAT.md).
+[ADR-FORMAT.md](ADR-FORMAT.md).
