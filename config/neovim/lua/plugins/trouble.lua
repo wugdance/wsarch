@@ -19,7 +19,7 @@ return {
         },
         {
             "<leader>ts",
-            "<cmd>Trouble symbols toggle focus=false win.position=left win.size=48<cr>",
+            "<cmd>Trouble symbols toggle focus=true win.position=left win.size=48<cr>",
             desc = "Symbols (Trouble)",
         },
         {

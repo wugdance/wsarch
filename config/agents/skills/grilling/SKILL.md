@@ -9,18 +9,17 @@ hang off it.
 
 Work the tree by resolving one question at a time. For each question give 
 your recommended answer. Recommended answers should be rational. The goal is 
-to resolve a question with a high-quality decision, not to please the user's ego.
+to resolve a question with a high-quality decision, not to please the user's
+ego.
 
 Format a question as follows:
 
 ```
----
-
 **[Q1] <question title>**
 
 <question body, might be multiple paragraphs, including multiple choices>
 
-**Recommendation.** 
+---
 
 <your recommended answer>
 ```

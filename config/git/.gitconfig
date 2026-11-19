@@ -4,7 +4,7 @@
         git push -u origin $(git branch --show-current)"
 
 [core]
-	pager = delta
+	pager = hunk pager
 
 [interactive]
 	diffFilter = delta --color-only --features=interactive
@@ -33,7 +33,13 @@
 
 [diff]
 	colorMoved = default
-    tool = nvimdiff
+    tool = hunk
+
+[difftool]
+    prompt = false
+
+[difftool "hunk"]
+    cmd = 'hunk difftool "$LOCAL" "$REMOTE" "$MERGED"'
 
 [include]
 	path = ~/.config/git/personal
