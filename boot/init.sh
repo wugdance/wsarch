@@ -33,10 +33,16 @@ source boot/modules/utils.sh
 source boot/modules/lang/rust.sh
 source boot/modules/lang/python.sh
 
+# pi needs node, which lang/js.sh installs and puts on PATH.
+source boot/modules/lang/js.sh && source boot/modules/pi.sh
+
 source boot/modules/neovim.sh
 
 # bat provides the theme for git-delta.
 source boot/modules/bat.sh && source boot/modules/git.sh
+
+# hunk is the git pager and needs node from lang/js.sh.
+source boot/modules/hunk.sh
 
 source boot/modules/tmux.sh
 source boot/modules/starship.sh

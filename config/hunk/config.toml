@@ -1,0 +1,74 @@
+# Rose Pine — mirrors opencode's rosepine-custom (dark variant)
+theme = "rosepine-custom"
+
+# Let the terminal background show through (matches opencode's "transparent" bg)
+transparent_background = true
+
+# Keep the files pane open; it renders as a tree on wide viewports
+sidebar = true
+mode = "unified"
+line_numbers = true
+wrap_lines = false
+hunk_headers = false
+menu_bar = false
+agent_notes = false
+copy_decorations = false
+cursor_line = "row"
+scroll_off = 8
+
+[themes.rosepine-custom]
+base = "rose-pine"
+label = "Rose Pine Custom"
+
+# UI chrome
+background = "#191724"      # base
+panel = "#1f1d2e"           # surface
+panelAlt = "#26233a"        # overlay
+border = "#403d52"          # highlightMed
+accent = "#9ccfd8"          # foam (opencode primary)
+accentMuted = "#403d52"     # highlightMed
+text = "#e0def4"
+muted = "#6e6a86"
+
+# Diff colors — matches opencode diffAddedBg/diffRemovedBg and delta emph tints
+addedBg = "#1f2d3a"
+removedBg = "#3a1f2d"
+movedAddedBg = "#1f2d3a"
+movedRemovedBg = "#3a1f2d"
+contextBg = "#191724"
+addedContentBg = "#3d5260"    # same tints as delta plus-emph
+removedContentBg = "#5c4149"  # same tints as delta minus-emph
+addedSignColor = "#31748f"    # pine
+removedSignColor = "#eb6f92"  # love
+lineNumberBg = "#1f1d2e"
+lineNumberFg = "#9491a6"
+selectedHunk = "#403d52"      # highlightMed
+
+# Badges and file status
+badgeAdded = "#9ccfd8"        # foam
+badgeRemoved = "#eb6f92"      # love
+badgeNeutral = "#908caa"      # subtle
+fileNew = "#9ccfd8"           # foam
+fileDeleted = "#eb6f92"       # love
+fileRenamed = "#c4a7e7"       # iris
+fileModified = "#f6c177"      # gold
+fileUntracked = "#908caa"     # subtle
+
+# Agent note cards
+noteBorder = "#c4a7e7"        # iris
+noteBackground = "#26233a"    # overlay
+noteTitleBackground = "#393552" # moon overlay (matches delta hunk-header)
+noteTitleText = "#e0def4"
+
+[themes.rosepine-custom.syntax_scopes]
+"comment" = "#6e6a86"
+"punctuation.definition.comment" = "#6e6a86"
+"keyword" = "#31748f"
+"keyword.operator" = "#908caa"
+"entity.name.function" = "#ebbcba"
+"variable" = "#e0def4"
+"string" = "#f6c177"
+"constant.numeric" = "#c4a7e7"
+"entity.name.type" = "#9ccfd8"
+"support.type" = "#9ccfd8"
+"punctuation" = "#908caa"
