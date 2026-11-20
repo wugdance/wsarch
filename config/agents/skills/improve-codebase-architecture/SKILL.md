@@ -60,11 +60,10 @@ you want.
 
 ### 2. Present candidates as an HTML report
 
-Write a self-contained HTML file to the OS temp directory so nothing lands in
-the repo. Resolve the temp dir from `$TMPDIR`, falling back to `~/tmp` (or
-`%TEMP%` on Windows), and write to
-`<tmpdir>/architecture-review-<timestamp>.html` so each run gets a fresh file.
-Show the absolute path to the user so they can open it.
+Write a self-contained HTML file to the `./.scratch/architecture-review`
+directory. Format the file name like 
+`./.scratch/architecture-review/<timestamp>.html` so each run gets a fresh
+file. Show the absolute path to the user so they can open it.
 
 The report uses **Tailwind via CDN** for layout and styling, and **Mermaid via
 CDN** for diagrams where a graph/flow/sequence reliably communicates the

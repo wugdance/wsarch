@@ -7,7 +7,7 @@ transparent_background = true
 # Keep the files pane open; it renders as a tree on wide viewports
 sidebar = true
 mode = "unified"
-line_numbers = true
+line_numbers = false
 wrap_lines = false
 hunk_headers = false
 menu_bar = false

@@ -12,11 +12,15 @@ end, {
 })
 
 vim.keymap.set("n", "<leader>bn", function()
-    local path = vim.fs.relpath(vim.loop.cwd(), vim.api.nvim_buf_get_name(0))
+    local path = vim.api.nvim_buf_get_name(0)
+    if vim.bo.filetype == "oil" then
+        path = require("oil").get_current_dir() or path
+    end
+    path = vim.fs.relpath(vim.loop.cwd(), path) or path
     vim.fn.setreg("+", path)
     vim.notify("Copied: " .. path, vim.log.levels.INFO)
 end, {
-    desc = "Get current buffer name.",
+    desc = "Copy current path",
 })
 
 -- Delete without polluting `"` register.
